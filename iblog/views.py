@@ -3,7 +3,8 @@ from iblog.models import Post
 
 # Create your views here.
 def blog_home_view(request):
-    posts = Post.objects.all()
+    # posts = Post.objects.all()
+    posts = Post.objects.filter(published_date__lte="2022-9-03 12:00:00")
     context_home = {'posts':posts}
     return render(request,'blog_pages/blog-home.html',context_home)
 
