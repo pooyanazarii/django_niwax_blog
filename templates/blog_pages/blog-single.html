@@ -1,299 +1,331 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <!--Breadcrumb Area-->
-    <section class="breadcrumb-area banner-2">
-      <div class="text-block">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 v-center">
-              <div class="bread-inner">
-                <div class="bread-menu">
-                  <ul>
-                    <li><a href="index.html">خانه</a></li>
-                    <li><a href="blog-grid.html">وبلاگ</a></li>
-                    <li><a href="#">جزئیات وبلاگ</a></li>
-                  </ul>
-                </div>
-                <div class="bread-title">
-                  <h2>تک پست</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--End Breadcrumb Area-->
-    <!--Start Blog Details-->
-    <section class="blog-page pad-tb">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="blog-header">
-              <h1>وب سایت – سریعترین راه برای آنلاین کردن تجارت شما</h1>
-              <div class="row mt20 mb20">
-                <div class="col-md-8 col-9">
-                  <div class="media">
-                    <div class="user-image bdr-radius"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl" class="img-fluid" /></div>
-                    <div class="media-body user-info">
-                      <h5>توسط جان دی</h5>
-                      <p>2 دی 1401</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-3">
-                  <div class="postwatch"><i class="far fa-eye"></i> 120</div>
-                </div>
-              </div>
-            </div>
-            <div class="image-set"><img src="{% static 'images/blog/blog-post-1.jpg' %}" alt="blog images" class="img-fluid" /></div>
-            <div class="blog-content mt30">
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی <strong>نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</strong> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-              </p>
-              <h3 class="mt30 mb20">وب سایت – سریعترین راه برای آنلاین کردن تجارت شما</h3>
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی <strong>نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</strong> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-              </p>
-              <h3 class="mt30 mb20">بنابراین، وب سایت چیست؟</h3>
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. 
-              </p>
-              <div class="image-set mt20 mb20"><img src="{% static 'images/blog/blog-post-2.jpg' %}" alt="blog images" class="img-fluid" /></div>
-              <h3 class="mt30 mb20">ویژگی های ضروری یک وب سایت خوب</h3>
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-              </p>
-              <h3 class="mt30 mb20">ویژگی های ضروری برای وب سایت های کسب و کار محلی</h3>
-              <ul class="ul-list mb30">
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
-                <li>اطلاعات مهم تجاری</li>
+<!--Breadcrumb Area-->
+<section class="breadcrumb-area banner-2">
+  <div class="text-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 v-center">
+          <div class="bread-inner">
+            <div class="bread-menu">
+              <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="blog-grid.html">وبلاگ</a></li>
+                <li><a href="#">جزئیات وبلاگ</a></li>
               </ul>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="image-set mt20 mb20"><img src="{% static 'images/blog/blog-1.jpg' %}" alt="blog images" class="img-fluid" /></div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="image-set mt20 mb20"><img src="{% static 'images/blog/blog-2.jpg' %}" alt="blog images" class="img-fluid" /></div>
-                </div>
-              </div>
-              <h3 class="mt30 mb20">افزایش قرار گرفتن در معرض محلی</h3>
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-              </p>
-              <blockquote class="rd-quote">
-                “لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. .”
-              </blockquote>
-              <h3 class="mt30 mb20">نتیجه</h3>
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. 
-              </p>
-
-			  <div class="row">
-									<div class="col-lg-8 col-md-8 mt30 mb30">
-										<div class="blog-post-tag">
-											<span>برچسب های مرتبط</span>
-											<a href="#">طراحی</a>
-											<a href="#">بازاریابی</a>
-											<a href="#">سئو</a>
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-4 mt30 mb30">
-										<div class="blog-share-icon text-left text-md-right">
-											<span>اشتراک: </span>
-											<a href="#"><i class="fab fa-facebook-f"></i></a>
-											<a href="#"><i class="fab fa-twitter"></i></a>
-											<a href="#"><i class="fab fa-instagram"></i></a>
-											<a href="#"><i class="fab fa-google-plus-g"></i></a>
-											<a href="#"><i class="fab fa-vimeo-v"></i></a>
-										</div>
-									</div>
-			</div>
-			<div class="row">
-
-									<div class="col-lg-6 col-md-6 mt30 mb30">
-										<div class="post-navigation text-left ">
-											<span><a href="#">پست قبلی</a></span>
-											<h4><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h4>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6 mt30 mb30">
-										<div class="post-navigation text-left text-md-right">
-											<span><a href="#">پست بعدی</a></span>
-											<h4><a href="#">چگونه تحول دیجیتال جهان را تغییر داده است.</a></h4>
-										</div>
-									</div>
-								</div>
-
             </div>
-            <div class="author-block">
-              <div class="media">
-                <div class="user-image"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl" class="img-fluid" /></div>
-                <div class="media-body user-info">
-                  <h5 class="mb10">جان دی</h5>
-                  <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="comments-block mt60">
-              <h2 class="mb60">نظرات:</h2>
-              <div class="media">
-                <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl" class="img-fluid"/></div>
-                <div class="media-body user-info">
-                  <h5 class="mb10">
-                    جان دی <small>گفته:</small>
-                    <span>
-                    2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                    </span>
-                  </h5>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                </div>
-              </div>
-              <div class="media replied">
-                <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl" class="img-fluid"/></div>
-                <div class="media-body user-info">
-                  <h5 class="mb10">
-                    جان دی <small>گفته:</small>
-                    <span>
-                    2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                    </span>
-                  </h5>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                </div>
-              </div>
-              <div class="media">
-                <div class="user-image bdr-radius"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl" class="img-fluid"/></div>
-                <div class="media-body user-info">
-                  <h5 class="mb10">
-                    جان دی <small>گفته:</small>
-                    <span>
-                    2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                    </span>
-                  </h5>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                </div>
-              </div>
-              <div class="form-block form-blog mt60">
-                <form action="#" method="post" name="#">
-                  <div class="fieldsets row">
-                    <div class="col-md-6"><input type="text" placeholder="نام" name="#" /></div>
-                    <div class="col-md-6"><input type="email" placeholder="ایمیل" name="#" /></div>
-                  </div>
-                  <div class="fieldsets row">
-                    <div class="col-md-12"><input type="text" placeholder="وبسایت" name="#" /></div>
-                  </div>
-                  <div class="fieldsets"><textarea placeholder="نظر شما" name="#"></textarea></div>
-                  <div class="fieldsets mt10">
-                    <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
-                  </div>
-                </form>
-              </div>
+            <div class="bread-title">
+              <h2>تک پست</h2>
             </div>
           </div>
-          <!--End Blog Details-->
-          <!--Start Sidebar-->
-          <div class="col-lg-4">
-            <div class="sidebar">
-              <!--Start block for offer/ads-->
-              <div class="offer-image">
-                <img src="{% static 'images/blog/strategy-guide.jpg' %}" alt="offer" class="img-fluid" />
-              </div>
-              <!--End block for offer/ads-->
-              <!--Start Recent post-->
-              <div class="recent-post widgets mt60">
-                <h3 class="mb30">اخبار جدید</h3>
-                <div class="media">
-                  <div class="post-image bdr-radius">
-                    <a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}" alt="girl" class="img-fluid" /></a>
-                  </div>
-                  <div class="media-body post-info">
-                    <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
-                    <p>2 دی 1400</p>
-                  </div>
-                </div>
-                <div class="media">
-                  <div class="post-image bdr-radius">
-                    <a href="#"><img src="{% static 'images/blog/blog-small2.jpg' %}" alt="girl" class="img-fluid" /></a>
-                  </div>
-                  <div class="media-body post-info">
-                    <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
-                    <p>2 دی 1400</p>
-                  </div>
-                </div>
-                <div class="media">
-                  <div class="post-image bdr-radius">
-                    <a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}" alt="girl" class="img-fluid" /></a>
-                  </div>
-                  <div class="media-body post-info">
-                    <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
-                    <p>2 دی 1400</p>
-                  </div>
-                </div>
-              </div>
-              <!--Start Recent post-->
-              <!--Start Blog Category-->
-              <div class="recent-post widgets mt60">
-                <h3 class="mb30">دسته بندی وبلاگ</h3>
-                <div class="blog-categories">
-                  <ul>
-                    <li>
-                      <a href="#">بیزینس <span class="categories-number">(2)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">مالی <span class="categories-number">(3)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">متفرقه <span class="categories-number">(4)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">طراحی وب <span class="categories-number">(3)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">وردپرس <span class="categories-number">(5)</span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!--End Blog Category-->
-              <!--Start Tags-->
-              <div class="recent-post widgets mt60">
-                <h3 class="mb30">برچسب های محبوب</h3>
-                <div class="tabs">
-                  <a href="#">طراحی وب</a>
-                  <a href="#">طراحی</a>
-                  <a href="#">طراحی گرافیک</a>
-                  <a href="#">وبسایت</a>
-                  <a href="#">بازاریابی</a>
-                  <a href="#">برندینگ</a>
-                  <a href="#">توسعه</a>
-                  <a href="#">وب</a>
-                  <a href="#">طراحی گرافیک</a>
-                  <a href="#">وبسایت</a>
-                  <a href="#">بازاریابی</a>
-                  <a href="#">برندینگ</a>
-                </div>
-              </div>
-              <!--End Tags-->
-              <!--Start block for offer/ads-->
-              <div class="offer-image mt60">
-                <img src="{% static 'images/blog/sidebar-image.jpg' %}" alt="offer" class="img-fluid" />
-              </div>
-              <!--End block for offer/ads-->
-            </div>
-          </div>
-		   <!--End Sidebar-->
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<!--End Breadcrumb Area-->
+<!--Start Blog Details-->
+<section class="blog-page pad-tb">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-header">
+          <h1>وب سایت – سریعترین راه برای آنلاین کردن تجارت شما</h1>
+          <div class="row mt20 mb20">
+            <div class="col-md-8 col-9">
+              <div class="media">
+                <div class="user-image bdr-radius"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl"
+                    class="img-fluid" /></div>
+                <div class="media-body user-info">
+                  <h5>توسط جان دی</h5>
+                  <p>2 دی 1401</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-3">
+              <div class="postwatch"><i class="far fa-eye"></i> 120</div>
+            </div>
+          </div>
+        </div>
+        <div class="image-set"><img src="{% static 'images/blog/blog-post-1.jpg' %}" alt="blog images"
+            class="img-fluid" /></div>
+        <div class="blog-content mt30">
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی <strong>نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+              است.</strong> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد
+            گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+            رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+          </p>
+          <h3 class="mt30 mb20">وب سایت – سریعترین راه برای آنلاین کردن تجارت شما</h3>
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی <strong>نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+              است.</strong> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد
+            گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+            رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+          </p>
+          <h3 class="mt30 mb20">بنابراین، وب سایت چیست؟</h3>
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد.
+          </p>
+          <div class="image-set mt20 mb20"><img src="{% static 'images/blog/blog-post-2.jpg' %}" alt="blog images"
+              class="img-fluid" /></div>
+          <h3 class="mt30 mb20">ویژگی های ضروری یک وب سایت خوب</h3>
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه
+            و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ
+            پیشرو در زبان فارسی ایجاد کرد.
+          </p>
+          <h3 class="mt30 mb20">ویژگی های ضروری برای وب سایت های کسب و کار محلی</h3>
+          <ul class="ul-list mb30">
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+            <li>اطلاعات مهم تجاری</li>
+          </ul>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="image-set mt20 mb20"><img src="{% static 'images/blog/blog-1.jpg' %}" alt="blog images"
+                  class="img-fluid" /></div>
+            </div>
+            <div class="col-lg-6">
+              <div class="image-set mt20 mb20"><img src="{% static 'images/blog/blog-2.jpg' %}" alt="blog images"
+                  class="img-fluid" /></div>
+            </div>
+          </div>
+          <h3 class="mt30 mb20">افزایش قرار گرفتن در معرض محلی</h3>
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه
+            و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ
+            پیشرو در زبان فارسی ایجاد کرد.
+          </p>
+          <blockquote class="rd-quote">
+            “لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. .”
+          </blockquote>
+          <h3 class="mt30 mb20">نتیجه</h3>
+          <p>
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد.
+          </p>
 
-	{% endblock %}
+          <div class="row">
+            <div class="col-lg-8 col-md-8 mt30 mb30">
+              <div class="blog-post-tag">
+                <span>برچسب های مرتبط</span>
+                <a href="#">طراحی</a>
+                <a href="#">بازاریابی</a>
+                <a href="#">سئو</a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 mt30 mb30">
+              <div class="blog-share-icon text-left text-md-right">
+                <span>اشتراک: </span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-vimeo-v"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-lg-6 col-md-6 mt30 mb30">
+              <div class="post-navigation text-left ">
+                <span><a href="#">پست قبلی</a></span>
+                <h4><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mt30 mb30">
+              <div class="post-navigation text-left text-md-right">
+                <span><a href="#">پست بعدی</a></span>
+                <h4><a href="#">چگونه تحول دیجیتال جهان را تغییر داده است.</a></h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="author-block">
+          <div class="media">
+            <div class="user-image"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl" class="img-fluid" />
+            </div>
+            <div class="media-body user-info">
+              <h5 class="mb10">جان دی</h5>
+              <p>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+                کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="comments-block mt60">
+          <h2 class="mb60">نظرات:</h2>
+          <div class="media">
+            <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
+                class="img-fluid" /></div>
+            <div class="media-body user-info">
+              <h5 class="mb10">
+                جان دی <small>گفته:</small>
+                <span>
+                  2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                </span>
+              </h5>
+              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+            </div>
+          </div>
+          <div class="media replied">
+            <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
+                class="img-fluid" /></div>
+            <div class="media-body user-info">
+              <h5 class="mb10">
+                جان دی <small>گفته:</small>
+                <span>
+                  2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                </span>
+              </h5>
+              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+            </div>
+          </div>
+          <div class="media">
+            <div class="user-image bdr-radius"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
+                class="img-fluid" /></div>
+            <div class="media-body user-info">
+              <h5 class="mb10">
+                جان دی <small>گفته:</small>
+                <span>
+                  2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                </span>
+              </h5>
+              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+            </div>
+          </div>
+          <div class="form-block form-blog mt60">
+            <form action="#" method="post" name="#">
+              <div class="fieldsets row">
+                <div class="col-md-6"><input type="text" placeholder="نام" name="#" /></div>
+                <div class="col-md-6"><input type="email" placeholder="ایمیل" name="#" /></div>
+              </div>
+              <div class="fieldsets row">
+                <div class="col-md-12"><input type="text" placeholder="وبسایت" name="#" /></div>
+              </div>
+              <div class="fieldsets"><textarea placeholder="نظر شما" name="#"></textarea></div>
+              <div class="fieldsets mt10">
+                <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i
+                    class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--End Blog Details-->
+      <!--Start Sidebar-->
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <!--Start block for offer/ads-->
+          <div class="offer-image">
+            <img src="{% static 'images/blog/strategy-guide.jpg' %}" alt="offer" class="img-fluid" />
+          </div>
+          <!--End block for offer/ads-->
+          <!--Start Recent post-->
+          <div class="recent-post widgets mt60">
+            <h3 class="mb30">اخبار جدید</h3>
+            <div class="media">
+              <div class="post-image bdr-radius">
+                <a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}" alt="girl" class="img-fluid" /></a>
+              </div>
+              <div class="media-body post-info">
+                <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
+                <p>2 دی 1400</p>
+              </div>
+            </div>
+            <div class="media">
+              <div class="post-image bdr-radius">
+                <a href="#"><img src="{% static 'images/blog/blog-small2.jpg' %}" alt="girl" class="img-fluid" /></a>
+              </div>
+              <div class="media-body post-info">
+                <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
+                <p>2 دی 1400</p>
+              </div>
+            </div>
+            <div class="media">
+              <div class="post-image bdr-radius">
+                <a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}" alt="girl" class="img-fluid" /></a>
+              </div>
+              <div class="media-body post-info">
+                <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
+                <p>2 دی 1400</p>
+              </div>
+            </div>
+          </div>
+          <!--Start Recent post-->
+          <!--Start Blog Category-->
+          <div class="recent-post widgets mt60">
+            <h3 class="mb30">دسته بندی وبلاگ</h3>
+            <div class="blog-categories">
+              <ul>
+                <li>
+                  <a href="#">بیزینس <span class="categories-number">(2)</span></a>
+                </li>
+                <li>
+                  <a href="#">مالی <span class="categories-number">(3)</span></a>
+                </li>
+                <li>
+                  <a href="#">متفرقه <span class="categories-number">(4)</span></a>
+                </li>
+                <li>
+                  <a href="#">طراحی وب <span class="categories-number">(3)</span></a>
+                </li>
+                <li>
+                  <a href="#">وردپرس <span class="categories-number">(5)</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--End Blog Category-->
+          <!--Start Tags-->
+          <div class="recent-post widgets mt60">
+            <h3 class="mb30">برچسب های محبوب</h3>
+            <div class="tabs">
+              <a href="#">طراحی وب</a>
+              <a href="#">طراحی</a>
+              <a href="#">طراحی گرافیک</a>
+              <a href="#">وبسایت</a>
+              <a href="#">بازاریابی</a>
+              <a href="#">برندینگ</a>
+              <a href="#">توسعه</a>
+              <a href="#">وب</a>
+              <a href="#">طراحی گرافیک</a>
+              <a href="#">وبسایت</a>
+              <a href="#">بازاریابی</a>
+              <a href="#">برندینگ</a>
+            </div>
+          </div>
+          <!--End Tags-->
+          <!--Start block for offer/ads-->
+          <div class="offer-image mt60">
+            <img src="{% static 'images/blog/sidebar-image.jpg' %}" alt="offer" class="img-fluid" />
+          </div>
+          <!--End block for offer/ads-->
+        </div>
+      </div>
+      <!--End Sidebar-->
+    </div>
+  </div>
+</section>
+
+{% endblock %}
