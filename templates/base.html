@@ -31,7 +31,7 @@
     <header class="nav-bg-w main-header navfix fixed-top menu-white">
         <div class="container-fluid m-pad">
             <div class="menu-header">
-                <div class="dsk-logo"><a class="nav-brand" href="{% url 'blog-home' %}">
+                <div class="dsk-logo"><a class="nav-brand" href="{% url 'blog:blog-home' %}">
                         <img src=" {% static 'images/white-logo.png' %}" alt="Logo" class="mega-white-logo" />
                     <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
                     </a>
@@ -46,10 +46,10 @@
                                         <div class="sub-menu-column smfull">
                                             <ul>
                                                 <!-- menu item -->
-                                                <li><a href="{% url 'blog-home' %}">خانه</a> </li>
-                                                <li><a href="{% url 'about' %}"> درباره ما </a> </li>
-                                                <li><a href="{% url 'blog_home_static' %}"> صفحه استاتیک </a> </li>
-                                                <li><a href="{% url 'test-' %}">صفحه تست آدرس</a> </li>
+                                                <li><a href="{% url 'blog:blog-home' %}">خانه</a> </li>
+                                                <li><a href="{% url 'blog:about' %}"> درباره ما </a> </li>
+                                                <li><a href="{% url 'blog:blog_home_static' %}"> صفحه استاتیک </a> </li>
+                                                <li><a href="{% url 'blog:test' pid=1 nameurls=aa %}">صفحه تست آدرس</a> </li>
 
                                             </ul>
                                         </div>
@@ -64,9 +64,9 @@
                                     <div class="sub-menu-center-block">
                                         <div class="sub-menu-column smfull">
                                             <ul>
-                                                <li><a href="{% url 'about' %}"> درباره ما </a> </li>
-                                                <li><a href="{% url 'error' %}"> صفحه خطا </a> </li>
-                                                <li><a href="{% url 'blog_single' %}"> صفحه تک پست </a> </li>
+                                                <li><a href="{% url 'blog:about' %}"> درباره ما </a> </li>
+                                                <li><a href="{% url 'blog:error' %}"> صفحه خطا </a> </li>
+                                                <li><a href="{% url 'blog:blog_single' %}"> صفحه تک پست </a> </li>
 
                                             </ul>
                                         </div>
@@ -108,7 +108,7 @@
                             </div>
                         </li>
 
-                        <li><a href="{% url 'about' %}" class="btn-br bg-btn3 btshad-b2 lnk">تماس مستقیم <span
+                        <li><a href="{% url 'blog:about' %}" class="btn-br bg-btn3 btshad-b2 lnk">تماس مستقیم <span
                                     class="circle"></span></a> </li>
                     </ul>
                 </div>
@@ -129,18 +129,18 @@
                             <li>
                                 <a href="#"> لیست یک </a>
                                 <ul>
-                                    <li><a href="{% url 'blog-home' %}">خانه</a></li>
-                                    <li><a href="{% url 'about' %}"> درباره ما </a> </li>
-                                    <li><a href="{% url 'error' %}"> صفحه خطا </a> </li>
-                                    <li><a href="{% url 'blog_single' %}"> صفحه تک پست </a> </li>
+                                    <li><a href="{% url 'blog:blog-home' %}">خانه</a></li>
+                                    <li><a href="{% url 'blog:about' %}"> درباره ما </a> </li>
+                                    <li><a href="{% url 'blog:error' %}"> صفحه خطا </a> </li>
+                                    <li><a href="{% url 'blog:blog_single' %}"> صفحه تک پست </a> </li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="#"> لیست دو </a>
                                 <ul>
-                                    <li><a href="{% url 'about' %}"> درباره ما </a> </li>
-                                    <li><a href="{% url 'error' %}"> صفحه خطا </a> </li>
-                                    <li><a href="{% url 'blog_single' %}"> صفحه تک پست </a> </li>
+                                    <li><a href="{% url 'blog:about' %}"> درباره ما </a> </li>
+                                    <li><a href="{% url 'blog:error' %}"> صفحه خطا </a> </li>
+                                    <li><a href="{% url 'blog:blog_single' %}"> صفحه تک پست </a> </li>
                                 </ul>
                             </li>
                         </ul>
@@ -149,9 +149,9 @@
                         <a href="#">بیشتر</a>
                         <ul>
 
-                            <li><a href="{% url 'about' %}"> درباره ما </a> </li>
-                            <li><a href="{% url 'error' %}"> صفحه خطا </a> </li>
-                            <li><a href="{% url 'blog_single' %}"> صفحه تک پست </a> </li>
+                            <li><a href="{% url 'blog:about' %}"> درباره ما </a> </li>
+                            <li><a href="{% url 'blog:error' %}"> صفحه خطا </a> </li>
+                            <li><a href="{% url 'blog:blog_single' %}"> صفحه تک پست </a> </li>
 
                         </ul>
                     </li>
@@ -288,7 +288,7 @@
                     <div class="col-lg-2 col-sm-6">
                         <h5>شرکت</h5>
                         <ul class="footer-address-list link-hover">
-                            <li><a href="{% url 'about' %}">تماس</a></li>
+                            <li><a href="{% url 'blog:about' %}">تماس</a></li>
                             <li><a href="javascript:void(0)">سوالات متداول</a></li>
                             <li><a href="javascript:void(0)">سیاست بازپرداخت</a></li>
                             <li><a href="javascript:void(0)">حریم خصوصی</a></li>

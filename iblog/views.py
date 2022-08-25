@@ -20,6 +20,6 @@ def error_view(request):
 def blog_home_static_view (request):
     return render(request,"blog_pages/blog-home-static.html")
 
-def url_view_test(request,nameurl):
-
-    return render(request , "test.html",{'urladd':nameurl})
+def url_view_test(request,pid,nameurls):
+    ur_context = {"pid":pid , 'nameurls':nameurls}
+    return render(request , "test.html",ur_context)
