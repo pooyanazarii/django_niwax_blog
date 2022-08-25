@@ -1,10 +1,13 @@
 from django.shortcuts import render ,get_object_or_404
 from iblog.models import Post
+from datetime import datetime
 
 # Create your views here.
 def blog_home_view(request):
     # posts = Post.objects.all()
-    posts = Post.objects.filter(published_date__lte="2022-9-03 12:00:00")
+    print("------------------------------------------------")
+    print(datetime.now())
+    posts = Post.objects.filter(published_date__lte=datetime.now() ,status=1)
     context_home = {'posts':posts}
     return render(request,'blog_pages/blog-home.html',context_home)
 
@@ -13,6 +16,9 @@ def about_view(request):
 
 def blog_single_view(request,pid):
     posts = get_object_or_404(Post,pk=pid)
+    temp_viewed = posts.counted_view
+    posts.counted_view = temp_viewed + 1
+    posts.save()
     context_singel_post = {'posts':posts}
     return render(request, 'blog_pages/blog-single.html',context_singel_post)
 
