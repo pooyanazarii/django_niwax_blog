@@ -77,14 +77,24 @@ WSGI_APPLICATION = 'bniwax_pj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd73o86rhbhm41j',
+#         'HOST':'ec2-44-193-178-122.compute-1.amazonaws.com',
+#         'PORT':'5432',
+#         'USER' :'rwdagjtnmqdsji',
+#         'PASSWORD' : 'dd9f33e4ac70e7480b4c9309f5e73a5487037a9bf1d6397b5667436d79f571c2' ,
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd73o86rhbhm41j',
-        'HOST':'ec2-44-193-178-122.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'test',
+        'HOST':'localhost',
         'PORT':'5432',
-        'USER' :'rwdagjtnmqdsji',
-        'PASSWORD' : 'dd9f33e4ac70e7480b4c9309f5e73a5487037a9bf1d6397b5667436d79f571c2' ,
+        'USER' :'postgres',
+        'PASSWORD' : '1234' ,
     }
 }
 
