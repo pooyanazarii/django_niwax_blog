@@ -18,3 +18,7 @@ def error_view(request):
 
 def blog_home_static_view (request):
     return render(request,"blog_pages/blog-home-static.html")
+
+def url_view_test(request,nameurl):
+
+    return render(request , "test.html",{'urladd':nameurl})
