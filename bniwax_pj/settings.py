@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'bniwax_pj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd73o86rhbhm41j',
         'HOST':'ec2-44-193-178-122.compute-1.amazonaws.com',
         'PORT':'5432',
