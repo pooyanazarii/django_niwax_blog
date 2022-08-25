@@ -48,7 +48,7 @@
 					</div>
 					<div class="blog-content-tt">
 						<div class="single-blog-info-">
-							<h4><a href="#">{{post.title}}</a></h4>
+							<h4><a href="{% url 'blog:blog_single' pid=post.id %}">{{post.title}}</a></h4>
 							<p>
 								
 								{{post.text_content |truncatewords:20}}

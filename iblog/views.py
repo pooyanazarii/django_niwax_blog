@@ -11,8 +11,9 @@ def blog_home_view(request):
 def about_view(request):
     return render(request,'blog_pages/about.html')
 
-# def blog_single_view(request):
-#     return render(request, 'blog_pages/blog_single.html')
+def blog_single_view(request,pid):
+    print(pid)
+    return render(request, 'blog_pages/blog-single.html')
 
 def error_view(request):
     return render(request, 'blog_pages/error.html')
@@ -20,6 +21,6 @@ def error_view(request):
 def blog_home_static_view (request):
     return render(request,"blog_pages/blog-home-static.html")
 
-# def url_view_test(request,pid,nameurls):
-#     ur_context = {"pid":pid , 'nameurls':nameurls}
-#     return render(request , "test.html",ur_context)
+def url_view_test(request,pid,nameurls):
+    ur_context = {"pid":pid , 'nameurls':nameurls}
+    return render(request , "test.html",ur_context)
