@@ -1,1 +1,1 @@
-web: gunicorn bniwax_pj.wsgi --log-file -
+web: gunicorn bniwax_pj.wsgi 
