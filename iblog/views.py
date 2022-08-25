@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from iblog.models import Post
 
 # Create your views here.
 def blog_home_view(request):
-    return render(request,'blog_pages/blog-home.html')
+    posts = Post.objects.all()
+    context_home = {'posts':posts}
+    return render(request,'blog_pages/blog-home.html',context_home)
 
 def about_view(request):
     return render(request,'blog_pages/about.html')

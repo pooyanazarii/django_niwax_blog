@@ -13,9 +13,11 @@
 								<!-- خانه  -->
 								<li><a href="index.html"> </a></li>
 								<li><a href="#"> نیواکس، اخبار تکنلوژی در یک نگاه </a></li>
+
 							</ul>
 						</div>
 						<div class="bread-title">
+
 							<h2> خوش آمدید♥ </h2>
 						</div>
 					</div>
@@ -30,24 +32,33 @@
 	<div class="container">
 
 		<div class="row">
-
+			<!-- start for -->
+			{% for post in posts %}
 			<div class="col-lg-4 mt60">
 				<div class="single-blog-post- shdo">
 					<div class="single-blog-img-">
 						<a href="#"><img src="{% static 'images/blog/blog-dg-1.jpg' %}" alt="girl"
 								class="img-fluid"></a>
 						<div class="entry-blog-post dg-bg2">
-							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> سئو</a></span>
+							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> {{post.category}} </a></span>
 							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> دو دی 1400</a>
+								<a href="#"><i class="fas fa-clock"></i> {{post.published_date.date}}</a>
 							</span>
 						</div>
 					</div>
 					<div class="blog-content-tt">
 						<div class="single-blog-info-">
-							<h4><a href="#">هر آنچه که باید در مورد سئو بدانید!</a></h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-								گرافیک است. .</p>
+							<h4><a href="#">{{post.title}}</a></h4>
+							<p>
+								
+								{{post.text_content |truncatewords:20}}
+								
+							</p>
+							<br>
+							<small>
+								
+								<p>{{post.counted_view}}<span> بار مشاهده شده</span></p>
+							</small>
 						</div>
 						<div class="post-social">
 							<div
@@ -68,192 +79,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 mt60">
-				<div class="single-blog-post- shdo">
-					<div class="single-blog-img-">
-						<a href="#"><img src="{% static 'images/blog/blog-dg-2.jpg' %}" alt="girl"
-								class="img-fluid"></a>
-						<div class="entry-blog-post bg-gradient12">
-							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> لاراول</a></span>
-							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> 2 دی 1400</a>
-							</span>
-						</div>
-					</div>
-					<div class="blog-content-tt">
-						<div class="single-blog-info-">
-							<h4><a href="#">بررسی ویژگی های کلیدی لاراول</a></h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-								گرافیک است. .</p>
-						</div>
-						<div class="post-social">
-							<div
-								class="ss-inline-share-wrapper ss-hover-animation-fade ss-inline-total-counter-left ss-left-inline-content ss-small-icons ss-with-spacing ss-circle-icons ss-without-labels">
-								<div class="ss-inline-share-content">
-									<div class="ss-social-icons-container">
-										<a href="javascript:void(0)">اشتراک</a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-facebook"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-twitter"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
-										<a href="javascript:void(0)" target="blank"><i
-												class="fab fa-facebook-messenger"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 mt60">
-				<div class="single-blog-post- shdo">
-					<div class="single-blog-img-">
-						<a href="#"><img src="{% static 'images/blog/blog-dg-3.jpg' %}" alt="girl"
-								class="img-fluid"></a>
-						<div class="entry-blog-post dg-bg2">
-							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> اپ موبایل</a></span>
-							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> 2 دی 1400</a>
-							</span>
-						</div>
-					</div>
-					<div class="blog-content-tt">
-						<div class="single-blog-info-">
-							<h4><a href="#">بهترین فناوری برای توسعه اپلیکیشن موبایل</a></h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-								گرافیک است. .</p>
-						</div>
-						<div class="post-social">
-							<div
-								class="ss-inline-share-wrapper ss-hover-animation-fade ss-inline-total-counter-left ss-left-inline-content ss-small-icons ss-with-spacing ss-circle-icons ss-without-labels">
-								<div class="ss-inline-share-content">
-									<div class="ss-social-icons-container">
-										<a href="javascript:void(0)">اشتراک</a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-facebook"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-twitter"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
-										<a href="javascript:void(0)" target="blank"><i
-												class="fab fa-facebook-messenger"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 mt60">
-				<div class="single-blog-post- shdo">
-					<div class="single-blog-img-">
-						<a href="#"><img src="{% static 'images/blog/blog-dg-1.jpg' %}" alt="girl"
-								class="img-fluid"></a>
-						<div class="entry-blog-post dg-bg2">
-							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> سئو</a></span>
-							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> دو دی 1400</a>
-							</span>
-						</div>
-					</div>
-					<div class="blog-content-tt">
-						<div class="single-blog-info-">
-							<h4><a href="#">هر آنچه که باید در مورد سئو بدانید!</a></h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-								گرافیک است. .</p>
-						</div>
-						<div class="post-social">
-							<div
-								class="ss-inline-share-wrapper ss-hover-animation-fade ss-inline-total-counter-left ss-left-inline-content ss-small-icons ss-with-spacing ss-circle-icons ss-without-labels">
-								<div class="ss-inline-share-content">
-									<div class="ss-social-icons-container">
-										<a href="javascript:void(0)">اشتراک</a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-facebook"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-twitter"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
-										<a href="javascript:void(0)" target="blank"><i
-												class="fab fa-facebook-messenger"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 mt60">
-				<div class="single-blog-post- shdo">
-					<div class="single-blog-img-">
-						<a href="#"><img src="{% static 'images/blog/blog-dg-2.jpg' %}" alt="girl"
-								class="img-fluid"></a>
-						<div class="entry-blog-post bg-gradient13">
-							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> لاراول</a></span>
-							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> 2 دی 1400</a>
-							</span>
-						</div>
-					</div>
-					<div class="blog-content-tt">
-						<div class="single-blog-info-">
-							<h4><a href="#">بررسی ویژگی های کلیدی لاراول</a></h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-								گرافیک است. .</p>
-						</div>
-						<div class="post-social">
-							<div
-								class="ss-inline-share-wrapper ss-hover-animation-fade ss-inline-total-counter-left ss-left-inline-content ss-small-icons ss-with-spacing ss-circle-icons ss-without-labels">
-								<div class="ss-inline-share-content">
-									<div class="ss-social-icons-container">
-										<a href="javascript:void(0)">اشتراک</a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-facebook"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-twitter"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
-										<a href="javascript:void(0)" target="blank"><i
-												class="fab fa-facebook-messenger"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 mt60">
-				<div class="single-blog-post- shdo">
-					<div class="single-blog-img-">
-						<a href="#"><img src="{% static 'images/blog/blog-dg-3.jpg' %}" alt="girl"
-								class="img-fluid"></a>
-						<div class="entry-blog-post dg-bg2">
-							<span class="bypost-"><a href="#"><i class="fas fa-tag"></i> اپ موبایل</a></span>
-							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> 2 دی 1400</a>
-							</span>
-						</div>
-					</div>
-					<div class="blog-content-tt">
-						<div class="single-blog-info-">
-							<h4><a href="#">بهترین فناوری برای توسعه اپلیکیشن موبایل</a></h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-								گرافیک است. .</p>
-						</div>
-						<div class="post-social">
-							<div
-								class="ss-inline-share-wrapper ss-hover-animation-fade ss-inline-total-counter-left ss-left-inline-content ss-small-icons ss-with-spacing ss-circle-icons ss-without-labels">
-								<div class="ss-inline-share-content">
-									<div class="ss-social-icons-container">
-										<a href="javascript:void(0)">اشتراک</a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-facebook"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-twitter"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
-										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
-										<a href="javascript:void(0)" target="blank"><i
-												class="fab fa-facebook-messenger"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
+			<!-- start for -->
 
 
 		</div>
