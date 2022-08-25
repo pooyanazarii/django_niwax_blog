@@ -1,4 +1,7 @@
+from turtle import title
 from django.db import models
+from django.utils.html import format_html
+from django.contrib import admin
 
 # Create your models here.
 class Post(models.Model):
@@ -12,5 +15,12 @@ class Post(models.Model):
     published_date = models.DateTimeField()
     created_date = models.DateTimeField()
     updated_date = models.DateTimeField()
+
+    class Meta:
+        ordering=['id']
+                
+    def __str__(self):
+        return self.title
+
 
 
