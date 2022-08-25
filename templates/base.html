@@ -33,7 +33,7 @@
             <div class="menu-header">
                 <div class="dsk-logo"><a class="nav-brand" href="{% url 'blog:blog-home' %}">
                         <img src=" {% static 'images/white-logo.png' %}" alt="Logo" class="mega-white-logo" />
-                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
+                        <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
                     </a>
                 </div>
                 <div class="custom-nav" role="navigation">
@@ -304,7 +304,8 @@
                             <div class="content">
                                 <p class="post-meta"><span class="post-date"><i class="far fa-clock"></i>دوم دی
                                         1400</span></p>
-                                <h4 class="title"><a href="{% static 'blog-sngle' %}">ما بهترین خدمات مشاوره خلاق را به
+                                <h4 class="title"><a href="{% url 'blog:blog_single' pid=1 %}">ما بهترین خدمات مشاوره
+                                        خلاق را به
                                         شما ارائه
                                         می دهیم </a></h4>
                             </div>
@@ -316,7 +317,8 @@
                             <div class="content">
                                 <p class="post-meta"><span class="post-date"><i class="far fa-clock"></i>دوم دی
                                         1400</span></p>
-                                <h4 class="title"><a href="{% static 'blog-sngle' %}">ما بهترین خدمات مشاوره خلاق را به
+                                <h4 class="title"><a href="{% url 'blog:blog_single' pid=1 %}">ما بهترین خدمات مشاوره
+                                        خلاق را به
                                         شما ارائه
                                         می دهیم </a></h4>
                             </div>

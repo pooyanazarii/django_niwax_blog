@@ -50,13 +50,13 @@
 						<div class="single-blog-info-">
 							<h4><a href="{% url 'blog:blog_single' pid=post.id %}">{{post.title}}</a></h4>
 							<p>
-								
+
 								{{post.text_content |truncatewords:20}}
-								
+
 							</p>
 							<br>
 							<small>
-								
+
 								<p>{{post.counted_view}}<span> بار مشاهده شده</span></p>
 							</small>
 						</div>
