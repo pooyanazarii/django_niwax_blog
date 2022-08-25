@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6snfu*%89j#y91jf^@cy^*_1d+7*8l33&dfcr5cd7v5c7%l42m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://niwax.herokuapp.com/","127.0.0.1"]
+ALLOWED_HOSTS = ["niwax.herokuapp.com","127.0.0.1"]
 
 
 # Application definition
@@ -80,10 +80,13 @@ WSGI_APPLICATION = 'bniwax_pj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'd73o86rhbhm41j',
+        'HOST':'ec2-44-193-178-122.compute-1.amazonaws.com',
+        'PORT':'5432',
+        'USER' :'rwdagjtnmqdsji',
+        'PASSWORD' : 'dd9f33e4ac70e7480b4c9309f5e73a5487037a9bf1d6397b5667436d79f571c2' ,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
