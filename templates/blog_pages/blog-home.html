@@ -37,13 +37,14 @@
 			<div class="col-lg-4 mt60">
 				<div class="single-blog-post- shdo">
 					<div class="single-blog-img-">
-						<a href="#"><img src="{{post.image.url}}" alt="girl"
-								class="img-fluid"></a>
-						<div class="entry-blog-post dg-bg2">
-							<span class="bypost-"><a href="###"><i class="fas fa-tag"></i> {{post.category}} </a></span>
+						<a href="{% url 'blog:blog_single' pid=post.id %}"><img src="{{post.image.url}}" alt="girl" class="img-fluid"></a>
+						
+						<div class="entry-blog-post dg-bg2 " href="{% url 'blog:blog_single' pid=post.id %}">
+							<span class="bypost-"><a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-tag"></i> {{post.category}} </a></span>
 							<span class="posted-on-">
-								<a href="#"><i class="fas fa-clock"></i> {{post.published_date.date}}</a>
-								
+								<a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-clock"></i> {{post.published_date.date}}</a>
+							</a>
+
 							</span>
 						</div>
 					</div>
@@ -56,29 +57,35 @@
 
 							</p>
 							<br>
-							<small>
-
-								<p>{{post.counted_view}}<span> بار مشاهده شده</span></p>
-							</small>
+							<div ><i class="far fa-eye"></i> {{post.counted_view}} </div>
 						</div>
 						<div class="post-social">
 							<div
 								class="ss-inline-share-wrapper ss-hover-animation-fade ss-inline-total-counter-left ss-left-inline-content ss-small-icons ss-with-spacing ss-circle-icons ss-without-labels">
 								<div class="ss-inline-share-content">
+
 									<div class="ss-social-icons-container">
 										<a href="javascript:void(0)">اشتراک</a>
 										<a href="javascript:void(0)" target="blank"><i class="fab fa-facebook"></i></a>
 										<a href="javascript:void(0)" target="blank"><i class="fab fa-twitter"></i></a>
 										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
 										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
-										<a href="javascript:void(0)" target="blank"><i
-												class="fab fa-facebook-messenger"></i></a>
+										<a href="javascript:void(0)" target="blank">
+											
+											<i class="fab fa-facebook-messenger"></i></a>
+
 									</div>
+
 								</div>
+
 							</div>
+
 						</div>
+
 					</div>
+
 				</div>
+
 			</div>
 			{% endfor %}
 			<!-- start for -->
