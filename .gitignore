@@ -155,3 +155,4 @@ cython_debug/
 
 myDoc.txt
 db.sqlite3
+*.sqlite3
