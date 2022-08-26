@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #this is whitenose
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    #for utc time
+    # "core.timezone_middleware.TimezoneMiddleware",
 ]
 
 ROOT_URLCONF = 'bniwax_pj.urls'
@@ -77,26 +79,26 @@ WSGI_APPLICATION = 'bniwax_pj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd73o86rhbhm41j',
-        'HOST':'ec2-44-193-178-122.compute-1.amazonaws.com',
-        'PORT':'5432',
-        'USER' :'rwdagjtnmqdsji',
-        'PASSWORD' : 'dd9f33e4ac70e7480b4c9309f5e73a5487037a9bf1d6397b5667436d79f571c2' ,
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'test',
-#         'HOST':'localhost',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd73o86rhbhm41j',
+#         'HOST':'ec2-44-193-178-122.compute-1.amazonaws.com',
 #         'PORT':'5432',
-#         'USER' :'postgres',
-#         'PASSWORD' : '1234' ,
+#         'USER' :'rwdagjtnmqdsji',
+#         'PASSWORD' : 'dd9f33e4ac70e7480b4c9309f5e73a5487037a9bf1d6397b5667436d79f571c2' ,
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'test',
+        'HOST':'localhost',
+        'PORT':'5432',
+        'USER' :'postgres',
+        'PASSWORD' : '1234' ,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -122,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
