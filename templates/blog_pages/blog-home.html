@@ -37,12 +37,13 @@
 			<div class="col-lg-4 mt60">
 				<div class="single-blog-post- shdo">
 					<div class="single-blog-img-">
-						<a href="#"><img src="{% static 'images/blog/blog-dg-1.jpg' %}" alt="girl"
+						<a href="#"><img src="{{post.image.url}}" alt="girl"
 								class="img-fluid"></a>
 						<div class="entry-blog-post dg-bg2">
 							<span class="bypost-"><a href="###"><i class="fas fa-tag"></i> {{post.category}} </a></span>
 							<span class="posted-on-">
 								<a href="#"><i class="fas fa-clock"></i> {{post.published_date.date}}</a>
+								
 							</span>
 						</div>
 					</div>
