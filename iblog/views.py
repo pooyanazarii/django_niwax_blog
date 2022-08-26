@@ -1,11 +1,12 @@
 from django.shortcuts import render ,get_object_or_404
 from iblog.models import Post
 from datetime import datetime
+from django.utils import timezone  
 
 # Create your views here.
 def blog_home_view(request):
     # posts = Post.objects.all()
-    posts = Post.objects.filter(published_date__lte=datetime.now() ,status=1)
+    posts = Post.objects.filter(published_date__lte=timezone.now() ,status=1)
     context_home = {'posts':posts}
     return render(request,'blog_pages/blog-home.html',context_home)
 
