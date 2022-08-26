@@ -154,3 +154,4 @@ cython_debug/
 
 
 myDoc.txt
+db.sqlite3
