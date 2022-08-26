@@ -37,31 +37,38 @@
                 <div class="user-image bdr-radius"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl"
                     class="img-fluid" /></div>
                 <div class="media-body user-info">
-                  <h5>توسط {{posts.author}}</h5>
+                  <h5>توسط {{posts.author.get_full_name}}</h5>
                   <p>{{posts.published_date.date}}</p>
                 </div>
               </div>
             </div>
             <div class="col-md-4 col-3">
-              <div class="postwatch"><i class="far fa-eye"></i> {{posts.counted_view}}</div>
+              <div class="postwatch"><i class="far fa-eye"></i> {{posts.counted_view}} </div>
             </div>
           </div>
         </div>
-        <div class="image-set"><img src="{% static 'images/blog/blog-post-1.jpg' %}" alt="blog images"
+        <div class="image-set"><img src="{{posts.image.url}}" alt="blog images"
             class="img-fluid" /></div>
         <div class="blog-content mt30">
           <!-- Start TEXT -->
           <p class="mt30 mb30">
+            <p></p>
             {{posts.text_content}}
+            <br>
+            <hr>
+
+            {{posts.tags.all|join:", "}}
           </p>
 
           <div class="row">
             <div class="col-lg-8 col-md-8 mt30 mb30">
               <div class="blog-post-tag">
                 <span>برچسب های مرتبط</span>
+                {% for cate in posts.tags.all %}
                 <a href="#">
-                  {{posts.category}}
+                  {{cate.nametag}}
                 </a>
+                {% endfor %}
               </div>
             </div>
             <div class="col-lg-4 col-md-4 mt30 mb30">
@@ -98,7 +105,7 @@
             <div class="user-image"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl" class="img-fluid" />
             </div>
             <div class="media-body user-info">
-              <h5 class="mb10"> {{posts.author}} </h5>
+              <h5 class="mb10"> {{posts.author.get_full_name}} </h5>
               <p>
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
                 متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
@@ -227,7 +234,11 @@
           <div class="recent-post widgets mt60">
             <h3 class="mb30">برچسب های محبوب</h3>
             <div class="tabs">
-              <a href="#"> {{posts.category}} </a>
+              {% for cate in posts.tags.all %}
+              <a href="#">
+                {{cate.nametag}}
+              </a>
+              {% endfor %}
             </div>
           </div>
           <!--End Tags-->
