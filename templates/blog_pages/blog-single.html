@@ -197,7 +197,10 @@
           <!--Start Recent post-->
 
           <!--Start Blog Category-->
-          {% include 'blog_pages/blog-category.html' %}
+
+          {% load blog_tag %}
+          {% category_post %}
+          
           <!--End Blog Category-->
           <!--Start Popular Tags-->
           {% include 'blog_pages/blog-popular-tags.html' %}

@@ -1,15 +1,19 @@
 {% load static %}
 <div class="recent-post widgets mt60">
-    <h3 class="mb30">دسته بندی وبلاگ</h3>
-    <div class="blog-categories">
-      <ul>
-        <li>
-          <a href="#">برنامه نویسی <span class="categories-number">(2)</span></a>
-        </li>
-        <li>
-          <a href="#">لینوکس <span class="categories-number">(3)</span></a>
-        </li>
+  <h3 class="mb30">دسته بندی وبلاگ</h3>
+  <div class="blog-categories">
+    <ul>
+      <!-- Start-->
+      {% for name,count in categories.items %}
+      
+      <li>
+        <a href="#">
+          {{name}}
+          <span class="categories-number">({{count}})</span></a>
+      </li>
 
-      </ul>
-    </div>
+      {% endfor%}
+      <!-- Start-->
+    </ul>
   </div>
+</div>

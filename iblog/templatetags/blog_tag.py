@@ -1,5 +1,6 @@
+from unicodedata import category
 from django import template
-from iblog.models import Post
+from iblog.models import Post,Tags
 register = template.Library()
 
 @register.simple_tag
@@ -29,3 +30,15 @@ def latestposts(arg=2):
 def bloglatest(arg=2):
     posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts': posts}
+
+
+@register.inclusion_tag("blog_pages/blog-category.html")
+def category_post():
+    posts  = Post.objects.filter(status=1)
+    categories = Tags.objects.all()
+    cat_dict={}
+    for name in categories:
+        count = posts.filter(tags=name).count()
+        cat_dict[name]=count
+
+    return {"categories":cat_dict}
