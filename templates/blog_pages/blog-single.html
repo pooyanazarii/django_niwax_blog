@@ -118,22 +118,10 @@
             {% endif %}
 
           </div>
-
         </div>
-        <div class="author-block">
-          <div class="media">
-            <div class="user-image"><img src="{% static 'images/user-thumb/girl.jpg' %}" alt="girl" class="img-fluid" />
-            </div>
-            <div class="media-body user-info">
-              <h5 class="mb10"> {{posts.author.get_full_name}} </h5>
-              <p>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
-                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-              </p>
-            </div>
-          </div>
-        </div>
+        <!--Start Writer section -->
+        {% include 'blog_pages/blog-writer.html' %}
+        <!-- End Writer section -->
         <div class="comments-block mt60">
           <h2 class="mb60">نظرات:</h2>
           <div class="media">
@@ -198,10 +186,10 @@
       <div class="col-lg-4">
         <div class="sidebar">
           <!--Start block for offer/ads-->
-          <!-- <div class="offer-image">
-            <img src="{% static 'images/blog/strategy-guide.jpg' %}" alt="offer" class="img-fluid" />
-          </div> -->
+          {% include 'blog_pages/blog-ads1.html' %}
           <!--End block for offer/ads-->
+
+
           <!--Start Recent post-->
           <div class="recent-post widgets mt60">
             <h3 class="mb30">اخبار جدید</h3>
@@ -263,9 +251,7 @@
           </div>
           <!--End Tags-->
           <!--Start block for offer/ads-->
-          <div class="offer-image mt60">
-            <img src="{% static 'images/blog/sidebar-image.jpg' %}" alt="offer" class="img-fluid" />
-          </div>
+          {% include 'blog_pages/blog-ads2.html' %}
           <!--End block for offer/ads-->
         </div>
       </div>
