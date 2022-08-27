@@ -15,7 +15,14 @@
     {% totlaposts as tp %}
     {% for p in tp %}
     <br>
-    {{p}}
+    {{p.title}}
+
+    {% endfor %}
+    <hr>
+    {% totlaposts as tp %}
+    {% for p in tp %}
+    <br>
+    {{p.title|snippet:60}}
 
     {% endfor %}
     

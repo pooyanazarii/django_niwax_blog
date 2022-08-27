@@ -9,3 +9,7 @@ def funplus (a):
 @register.simple_tag(name='totlaposts')
 def allpost ():
     return Post.objects.filter(status=1)
+
+@register.filter
+def snippet(value,arg=5):
+    return value[:arg]+"..."
