@@ -37,13 +37,16 @@
 			<div class="col-lg-4 mt60">
 				<div class="single-blog-post- shdo">
 					<div class="single-blog-img-">
-						<a href="{% url 'blog:blog_single' pid=post.id %}"><img src="{{post.image.url}}" alt="girl" class="img-fluid"></a>
-						
+						<a href="{% url 'blog:blog_single' pid=post.id %}"><img src="{{post.image.url}}" alt="girl"
+								class="img-fluid"></a>
+
 						<div class="entry-blog-post dg-bg2 " href="{% url 'blog:blog_single' pid=post.id %}">
-							<span class="bypost-"><a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-tag"></i> {{post.category}} </a></span>
+							<span class="bypost-"><a href="{% url 'blog:blog_single' pid=post.id %}"><i
+										class="fas fa-tag"></i> {{post.category}} </a></span>
 							<span class="posted-on-">
-								<a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-clock"></i> {{post.published_date|date:"Y/m/d"}}</a>
-							</a>
+								<a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-clock"></i>
+									{{post.published_date|date:"Y/m/d"}}</a>
+								</a>
 
 							</span>
 						</div>
@@ -53,11 +56,11 @@
 							<h4><a href="{% url 'blog:blog_single' pid=post.id %}">{{post.title}}</a></h4>
 							<p>
 
-								{{post.text_content |truncatewords:20}}
+								{{post.text_content |truncatewords:17}}
 
 							</p>
 							<br>
-							<div ><i class="far fa-eye"></i> {{post.counted_view}} </div>
+							<div><i class="far fa-eye"></i> {{post.counted_view}} </div>
 						</div>
 						<div class="post-social">
 							<div
@@ -71,7 +74,7 @@
 										<a href="javascript:void(0)" target="blank"><i class="fab fa-linkedin"></i></a>
 										<a href="javascript:void(0)" target="blank"><i class="fas fa-envelope"></i></a>
 										<a href="javascript:void(0)" target="blank">
-											
+
 											<i class="fab fa-facebook-messenger"></i></a>
 
 									</div>
