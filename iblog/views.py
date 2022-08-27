@@ -48,6 +48,5 @@ def blog_home_static_view (request):
 
 
 
-def url_view_test(request,pid,nameurls):
-    ur_context = {"pid":pid , 'nameurls':nameurls}
-    return render(request , "test.html",ur_context)
+def url_view_test(request):
+    return render(request , "test.html")
