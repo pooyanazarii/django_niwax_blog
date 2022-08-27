@@ -25,7 +25,7 @@ def latestposts(arg=2):
     posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts': posts}
 
-@register.inclusion_tag('blog_pages/blog-latest-news.html')
+@register.inclusion_tag('blog_pages/blog-latest-news.html',name="mylastpost")
 def bloglatest(arg=2):
     posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts': posts}
