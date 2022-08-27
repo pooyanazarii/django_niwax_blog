@@ -12,6 +12,12 @@
     <p></p>
     This is a: {% funplus 2 %}
     <br>
+    {% totlaposts as tp %}
+    {% for p in tp %}
+    <br>
+    {{p}}
+
+    {% endfor %}
     
 </body>
 </html>
