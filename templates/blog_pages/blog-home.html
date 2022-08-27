@@ -33,6 +33,7 @@
 
 		<div class="row">
 			<!-- start for -->
+			{% if posts %}
 			{% for post in posts %}
 			<div class="col-lg-4 mt60">
 				<div class="single-blog-post- shdo">
@@ -91,6 +92,22 @@
 
 			</div>
 			{% endfor %}
+			{% else %}
+			<center>
+				<h3>
+					متاسفانه پستی در این دسته بندی منتشر نشده!
+				</h3>
+				<br>
+				<h4>
+					می‌توانید از دیگر دسته بندی‌ها انتخاب کنید.
+				</h4>
+				<div class="col-lg-4 mt">
+					{% load blog_tag %}
+					{% category_post %}
+				</div>
+			</center>
+
+			{% endif %}
 			<!-- start for -->
 
 
