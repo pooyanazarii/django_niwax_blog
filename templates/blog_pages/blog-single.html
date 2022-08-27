@@ -191,65 +191,15 @@
 
 
           <!--Start Recent post-->
-          <div class="recent-post widgets mt60">
-            <h3 class="mb30">اخبار جدید</h3>
-            <div class="media">
-              <div class="post-image bdr-radius">
-                <a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}" alt="girl" class="img-fluid" /></a>
-              </div>
-              <div class="media-body post-info">
-                <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
-                <p>2 دی 1400</p>
-              </div>
-            </div>
-            <div class="media">
-              <div class="post-image bdr-radius">
-                <a href="#"><img src="{% static 'images/blog/blog-small2.jpg' %}" alt="girl" class="img-fluid" /></a>
-              </div>
-              <div class="media-body post-info">
-                <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
-                <p>2 دی 1400</p>
-              </div>
-            </div>
-            <div class="media">
-              <div class="post-image bdr-radius">
-                <a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}" alt="girl" class="img-fluid" /></a>
-              </div>
-              <div class="media-body post-info">
-                <h5><a href="#">توسعه برنامه بازار سهام - زمان، هزینه، ویژگی ها</a></h5>
-                <p>2 دی 1400</p>
-              </div>
-            </div>
-          </div>
+          {% include 'blog_pages/blog-latest-news.html' %}
           <!--Start Recent post-->
-          <!--Start Blog Category-->
-          <div class="recent-post widgets mt60">
-            <h3 class="mb30">دسته بندی وبلاگ</h3>
-            <div class="blog-categories">
-              <ul>
-                <li>
-                  <a href="#">برنامه نویسی <span class="categories-number">(2)</span></a>
-                </li>
-                <li>
-                  <a href="#">لینوکس <span class="categories-number">(3)</span></a>
-                </li>
 
-              </ul>
-            </div>
-          </div>
+          <!--Start Blog Category-->
+          {% include 'blog_pages/blog-category.html' %}
           <!--End Blog Category-->
-          <!--Start Tags-->
-          <div class="recent-post widgets mt60">
-            <h3 class="mb30">برچسب های محبوب</h3>
-            <div class="tabs">
-              {% for cate in posts.tags.all %}
-              <a href="#">
-                {{cate.nametag}}
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-          <!--End Tags-->
+          <!--Start Popular Tags-->
+          {% include 'blog_pages/blog-popular-tags.html' %}
+          <!--End Popular Tags-->
           <!--Start block for offer/ads-->
           {% include 'blog_pages/blog-ads2.html' %}
           <!--End block for offer/ads-->

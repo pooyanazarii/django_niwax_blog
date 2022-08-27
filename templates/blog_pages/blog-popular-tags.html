@@ -1,0 +1,11 @@
+{% load static %}
+<div class="recent-post widgets mt60">
+    <h3 class="mb30">برچسب های محبوب</h3>
+    <div class="tabs">
+      {% for cate in posts.tags.all %}
+      <a href="#">
+        {{cate.nametag}}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
