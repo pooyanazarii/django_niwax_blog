@@ -294,35 +294,10 @@
                             <li><a href="javascript:void(0)">کپی رایت</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-4 col-sm-6 footer-blog-">
-                        <h5>آخرین اخبار</h5>
-                        <div class="single-blog-">
-                            <div class="post-thumb"><a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}"
-                                        alt="blog"></a>
-                            </div>
-                            <div class="content">
-                                <p class="post-meta"><span class="post-date"><i class="far fa-clock"></i>دوم دی
-                                        1400</span></p>
-                                <h4 class="title"><a href="{% url 'blog:blog_single' pid=1 %}">ما بهترین خدمات مشاوره
-                                        خلاق را به
-                                        شما ارائه
-                                        می دهیم </a></h4>
-                            </div>
-                        </div>
-                        <div class="single-blog-">
-                            <div class="post-thumb"><a href="#"><img src="{% static 'images/blog/blog-small.jpg' %}"
-                                        alt="blog"></a>
-                            </div>
-                            <div class="content">
-                                <p class="post-meta"><span class="post-date"><i class="far fa-clock"></i>دوم دی
-                                        1400</span></p>
-                                <h4 class="title"><a href="{% url 'blog:blog_single' pid=1 %}">ما بهترین خدمات مشاوره
-                                        خلاق را به
-                                        شما ارائه
-                                        می دهیم </a></h4>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Start footer latest post-->
+                    {% load blog_tag %}
+                    {% latestposts 3 %}
+                    <!-- end footer latest post-->
                 </div>
             </div>
         </div>

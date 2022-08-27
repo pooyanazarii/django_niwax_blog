@@ -192,7 +192,8 @@
 
 
           <!--Start Recent post-->
-          {% include 'blog_pages/blog-latest-news.html' %}
+          {% load blog_tag %}
+          {% bloglatest 4 %}
           <!--Start Recent post-->
 
           <!--Start Blog Category-->
