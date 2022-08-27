@@ -38,7 +38,8 @@
                     class="img-fluid" /></div>
                 <div class="media-body user-info">
                   <h5>توسط {{posts.author.get_full_name}}</h5>
-                  <p>{{posts.published_date.date}}</p>
+                  <!-- <p>{{posts.published_date.date}}</p> -->
+                  <p>{{posts.published_date.date|date:"d M Y"}}</p>
                 </div>
               </div>
             </div>
@@ -57,6 +58,16 @@
             <hr>
 
             {{posts.tags.all|join:", "}}
+            <br>
+            <br>
+
+            {% for cate in posts.tags.all %}
+            <a href="{{cate.id}}">
+              {{cate.nametag}}
+              {% if not forloop.last %},{% endif %}
+            </a>
+            {% endfor %}
+
           </p>
 
           <div class="row">
@@ -82,25 +93,25 @@
             </div>
           </div>
           <div class="row">
-            {% if prev.id  %}
+            {% if prev.id %}
             <!-- preives post -->
             <div class="col-lg-6 col-md-6 mt30 mb30">
               <div class="post-navigation text-left ">
                 <span><a href="{% url 'blog:blog_single' pid=prev.id %}">پست قبلی</a></span>
                 <h4><a href="{% url 'blog:blog_single' pid=prev.id %}">
-                  {{prev.title}}
+                    {{prev.title}}
 
                   </a></h4>
               </div>
             </div>
             {% endif %}
-            {% if next.id  %}
+            {% if next.id %}
             <!-- next post -->
             <div class="col-lg-6 col-md-6 mt30 mb30">
               <div class="post-navigation text-left text-md-right">
                 <span><a href="{% url 'blog:blog_single' pid=next.id %}">پست بعدی</a></span>
                 <h4><a href="{% url 'blog:blog_single' pid=next.id %}">
-                  {{next.title}}
+                    {{next.title}}
                   </a></h4>
               </div>
             </div>

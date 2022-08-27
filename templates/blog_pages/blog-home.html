@@ -42,7 +42,7 @@
 						<div class="entry-blog-post dg-bg2 " href="{% url 'blog:blog_single' pid=post.id %}">
 							<span class="bypost-"><a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-tag"></i> {{post.category}} </a></span>
 							<span class="posted-on-">
-								<a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-clock"></i> {{post.published_date.date}}</a>
+								<a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-clock"></i> {{post.published_date|date:"Y/m/d"}}</a>
 							</a>
 
 							</span>
