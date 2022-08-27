@@ -9,4 +9,5 @@ urlpatterns = [
     path('error',error_view,name='error'),
     path('blog_home_static',blog_home_static_view,name='blog_home_static'),
     path('test',url_view_test,name="test"),
+    path('category=<str:getname>',blog_cat_view,name="category"),
 ]

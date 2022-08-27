@@ -50,3 +50,11 @@ def blog_home_static_view (request):
 
 def url_view_test(request):
     return render(request , "test.html")
+
+
+def blog_cat_view(request,getname):
+    # posts = Post.objects.all()
+    posts = Post.objects.filter(status=1)
+    posts  = posts.filter(tags__nametag=getname)
+    context_home = {'posts':posts}
+    return render(request,'blog_pages/blog-home.html',context_home)

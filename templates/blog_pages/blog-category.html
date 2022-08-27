@@ -7,7 +7,7 @@
       {% for name,count in categories.items %}
       
       <li>
-        <a href="#">
+        <a href="{% url 'blog:category' getname=name.nametag %}">
           {{name}}
           <span class="categories-number">({{count}})</span></a>
       </li>
