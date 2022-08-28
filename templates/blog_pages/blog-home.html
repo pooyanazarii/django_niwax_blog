@@ -33,6 +33,15 @@
 
 		<div class="row">
 			<!-- start for -->
+			{% if searchkey %}
+			<center>
+				<h3>
+					نتایج جست‌وجوی {{ searchkey }}
+				</h3>
+				<br>
+			</center>
+			{% endif %}
+
 			{% if posts %}
 			{% for post in posts %}
 			<div class="col-lg-4 mt60">

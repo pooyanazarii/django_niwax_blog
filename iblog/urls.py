@@ -11,4 +11,5 @@ urlpatterns = [
     path('test',url_view_test,name="test"),
     path('category=<str:getname>',blog_home_view,name="category"),
     path('author=<str:author_username>',blog_home_view,name="author"),
+    path('search/',search_view,name='search'),
 ]

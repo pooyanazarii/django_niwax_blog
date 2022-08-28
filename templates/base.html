@@ -16,10 +16,10 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/plugin.min.css' %}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-     <link
+    <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet"> 
-     <!-- template-style -->
+        rel="stylesheet">
+    <!-- template-style -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'css/darkmode.css' %}" rel="stylesheet">
@@ -29,13 +29,16 @@
 <body>
     <!--Start Header -->
     <header class="nav-bg-w main-header navfix fixed-top menu-white">
+        
         <div class="container-fluid m-pad">
             <div class="menu-header">
+                
                 <div class="dsk-logo"><a class="nav-brand" href="{% url 'blog:blog-home' %}">
                         <img src=" {% static 'images/white-logo.png' %}" alt="Logo" class="mega-white-logo" />
                         <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
                     </a>
                 </div>
+                {% include 'blog_pages/search_bar.html' %}
                 <div class="custom-nav" role="navigation">
                     <ul class="nav-list">
                         <li class="sbmenu rpdropdown">
@@ -55,6 +58,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="sbmenu rpdropdown">
                             <a href="#" class="menu-links">بیشتر</a>
                             <div class="nx-dropdown menu-dorpdown">
@@ -75,10 +79,12 @@
                         <li>
                             <a href="#" class="menu-links right-bddr">&nbsp;</a>
                             <!--menu right border-->
+
                         <li class="contact-show">
                             <a href="#" class="btn-round- trngl btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>
                             <div class="contact-inquiry">
                                 <div class="contact-info-">
+
                                     <div class="contct-heading">تماس</div>
                                     <div class="inquiry-card-nn hrbg">
                                         <div class="title-inq-c">مشاوره</div>
@@ -154,6 +160,7 @@
                         </ul>
                     </li>
                 </ul>
+                
                 <ul class="bottom-nav">
                     <li class="prb">
                         <a href="tel:+11111111111">
@@ -185,8 +192,11 @@
                         </a>
                     </li>
                 </ul>
+                
             </nav>
+            
         </div>
+        
     </header>
     <!--Mobile contact-->
     <div class="popup-modal1">
@@ -221,7 +231,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
     <!--Mobile contact-->
     <!--End Header -->
@@ -242,6 +254,7 @@
                                 است. </p>
                         </div>
                     </div>
+
                     <div class="col-lg-6 v-center">
                         <div class="email-subs-form">
                             <form>
