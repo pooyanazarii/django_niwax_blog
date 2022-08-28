@@ -125,4 +125,38 @@
 	</div>
 </section>
 <!--End Blog Grid-->
+<!-- Start paginator -->
+<!-- css of button lnk btn-main bg-btn -->
+<!-- <span class="circle"></span> -->
+<center>
+	<div>
+		<span class="step-links">
+			{% if posts.has_previous %}
+			<a class="btn-main bg-btn3 bg-btn lnk mt20 " href="?page={{ posts.previous_page_number }}">
+				<!-- &laquo;  -->
+				<i class="fas fa-chevron-right fa-icon"></i>
+			</a>
+			{% endif %}
+			{% for pages in posts.paginator.page_range %}
+			{% if pages == posts.number %}
+			<a class="btn-main bg-btn2 lnk mt20 ">{{pages}} </a>
+			{% else %}
+			<a class="btn-main bg-btn3 lnk mt20 " href="?page={{pages}}">
+				{{pages}}
+			</a>
+			{% endif %}
+			{% endfor %}
+			{% if posts.has_next %}
+			<a class="btn-main bg-btn3 lnk mt20  " href="?page={{ posts.paginator.num_pages }}">
+				<i class="fas fa-chevron-left fa-icon"></i>
+				<!-- &raquo; -->
+		</span>
+		</a>
+		{% endif %}
+		</span>
+	</div>
+</center>
+<br>
+<br>
+<!-- end paginator -->
 {% endblock %}

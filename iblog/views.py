@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from iblog.models import Post
 from datetime import datetime
 from django.utils import timezone
+from django.core.paginator import Paginator , PageNotAnInteger, EmptyPage
+
 
 # Create your views here.
 
@@ -15,6 +17,21 @@ def blog_home_view(request, **kwargs):
         posts = posts.filter(tags__nametag=kwargs["getname"])
     if kwargs.get("author_username"):
         posts = posts.filter(author__username=kwargs["author_username"])
+    
+    # pagenumber = 1
+    # if pagenumber := request.GET.get('page'):
+        # pass
+    # Paginator
+    posts = Paginator(posts,2)
+    try:
+        
+        posts = posts.get_page(request.GET.get('page'))
+    except PageNotAnInteger:
+        posts = posts.get_page(1)
+    except EmptyPage:
+        posts = posts.get_page(1)
+
+        
     context_home = {'posts': posts}
     return render(request, 'blog_pages/blog-home.html', context_home)
 
