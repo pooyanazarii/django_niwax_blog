@@ -29,10 +29,10 @@
 <body>
     <!--Start Header -->
     <header class="nav-bg-w main-header navfix fixed-top menu-white">
-        
+
         <div class="container-fluid m-pad">
             <div class="menu-header">
-                
+
                 <div class="dsk-logo"><a class="nav-brand" href="{% url 'blog:blog-home' %}">
                         <img src=" {% static 'images/white-logo.png' %}" alt="Logo" class="mega-white-logo" />
                         <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
@@ -41,6 +41,12 @@
                 {% include 'blog_pages/search_bar.html' %}
                 <div class="custom-nav" role="navigation">
                     <ul class="nav-list">
+                        <li class="sbmenu rpdropdown">
+                            <a href="admin/" class="menu-links"> ورود ادمین </a>
+                            <div class="nx-dropdown menu-dorpdown">
+                            </div>
+                        </li>
+
                         <li class="sbmenu rpdropdown">
                             <a href="#" class="menu-links"> خانه </a>
                             <div class="nx-dropdown menu-dorpdown">
@@ -160,7 +166,7 @@
                         </ul>
                     </li>
                 </ul>
-                
+
                 <ul class="bottom-nav">
                     <li class="prb">
                         <a href="tel:+11111111111">
@@ -192,11 +198,11 @@
                         </a>
                     </li>
                 </ul>
-                
+
             </nav>
-            
+
         </div>
-        
+
     </header>
     <!--Mobile contact-->
     <div class="popup-modal1">
@@ -238,11 +244,12 @@
     <!--Mobile contact-->
     <!--End Header -->
 
-
+   
     {% block content %}
 
     {% endblock %}
     <!--Start Footer-->
+    
     <footer>
         <div class="footer-row1">
             <div class="container">

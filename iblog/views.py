@@ -22,7 +22,7 @@ def blog_home_view(request, **kwargs):
     # if pagenumber := request.GET.get('page'):
         # pass
     # Paginator
-    posts = Paginator(posts,2)
+    posts = Paginator(posts,6)
     try:
         
         posts = posts.get_page(request.GET.get('page'))
