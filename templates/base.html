@@ -38,7 +38,7 @@
                         <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
                     </a>
                 </div>
-                {% include 'blog_pages/search_bar.html' %}
+                
                 <div class="custom-nav" role="navigation">
                     <ul class="nav-list">
                         <li class="sbmenu rpdropdown">
@@ -239,12 +239,12 @@
             </div>
 
         </div>
-
+        
     </div>
     <!--Mobile contact-->
     <!--End Header -->
 
-   
+    
     {% block content %}
 
     {% endblock %}
@@ -316,7 +316,11 @@
                     </div>
                     <!-- Start footer latest post-->
                     {% load blog_tag %}
-                    {% latestposts 3 %}
+                    {% popularposts 4 %}
+
+
+
+                    
                     <!-- end footer latest post-->
                 </div>
             </div>

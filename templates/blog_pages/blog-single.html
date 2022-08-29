@@ -14,15 +14,29 @@
                 <li><a href="{% url 'blog:blog-home' %}">خانه</a></li>
                 <li><a href="{% url 'blog:blog-home' %}">وبلاگ</a></li>
               </ul>
+
             </div>
             <div class="bread-title">
               <h2> {{posts.title}} </h2>
+
+
             </div>
+
           </div>
+
         </div>
+        <center>
+          {% load search_bar %}
+          {% searchbar  %}
+        </center>
+
       </div>
+     
+
     </div>
+
   </div>
+
 </section>
 <!--End Breadcrumb Area-->
 <!--Start Blog Details-->
@@ -216,5 +230,8 @@
     </div>
   </div>
 </section>
+
+{% load recent_element %}
+{% recposts %}
 
 {% endblock %}

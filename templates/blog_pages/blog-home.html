@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load recent_element %}
 {% block content %}
 <!--Breadcrumb Area-->
 <section class="breadcrumb-area banner-2">
@@ -22,6 +23,11 @@
 						</div>
 					</div>
 				</div>
+				<center>
+					{% load search_bar %}
+					{% searchbar  %}
+				  </center>
+		  
 			</div>
 		</div>
 	</div>
@@ -32,6 +38,8 @@
 	<div class="container">
 
 		<div class="row">
+
+			
 			<!-- start for -->
 			{% if searchkey %}
 			<center>
@@ -100,6 +108,7 @@
 				</div>
 
 			</div>
+			
 			{% endfor %}
 			{% else %}
 			<center>
@@ -162,4 +171,6 @@
 <br>
 <br>
 <!-- end paginator -->
+
+{% recposts 6 %}
 {% endblock %}

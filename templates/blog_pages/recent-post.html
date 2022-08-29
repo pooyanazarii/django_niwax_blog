@@ -1,0 +1,35 @@
+{% load static %}
+<div class="container">
+    <br>
+    <h5>
+        اخیرا منتشر شده
+    </h5>
+    <br>
+    <div class="row justify-content-between-right">
+        {% for post in posts %}
+        <div class="col-lg-3 col-sm-6">
+            <div class="single-blog-">
+                <div class="post-thumb"><a href="{% url 'blog:blog_single' pid=post.id %}"><img src="{{post.image.url}}"
+                            alt="blog"></a>
+                </div>
+                <div class="content">
+                    <p class="post-meta"><span class="post-date">
+                            <i class="far fa-clock">
+
+                            </i>
+                            {{post.published_date|date:"Y/m/d"}}
+                        </span>
+                    </p>
+                    <h4 class="title"><a href="{% url 'blog:blog_single' pid=post.id %}">
+                            {{post.title|truncatewords:8}}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<br>

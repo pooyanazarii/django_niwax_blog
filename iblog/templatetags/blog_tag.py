@@ -1,4 +1,3 @@
-from unicodedata import category
 from django import template
 from iblog.models import Post,Tags
 register = template.Library()
@@ -15,15 +14,15 @@ def allpost ():
 def snippet(value,arg=5):
     return value[:arg]+"..."
 
-@register.inclusion_tag('popularposts.html')
-def popularposts():
-    posts = Post.objects.filter(status=1).order_by('-published_date')[:1]
-    return {'posts': posts}
+# @register.inclusion_tag('popularposts.html') # more used
+# def popularposts_test():
+#     posts = Post.objects.filter(status=1).order_by('-published_date')[:1]
+#     return {'posts': posts}
 
 
-@register.inclusion_tag('latestpost.html')
-def latestposts(arg=2):
-    posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
+@register.inclusion_tag('popularlatestpost.html')
+def popularposts(arg=2):
+    posts = Post.objects.filter(status=1).order_by('-counted_view')[:arg]
     return {'posts': posts}
 
 @register.inclusion_tag('blog_pages/blog-latest-news.html',name="mylastpost")
