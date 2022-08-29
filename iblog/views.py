@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from iblog.forms import NameFrom
 from iblog.forms import ContactForm
 from django.http import HttpResponse
+from django.contrib import messages
 
 
 # Create your views here.
@@ -124,8 +125,10 @@ def test2_view(request):
             # message = form.cleaned_data['message']
             # print(name,email,subject,message)
             form.save()
+            messages.add_message(request,messages.SUCCESS,'Your ticekt ok')
             return HttpResponse("done")
         else:
+            messages.add_message(request,messages.ERROR,'noooooooooo')
             return HttpResponse("no valied")
     form = ContactForm()
     return render(request,"test2.html",{'form':form})
