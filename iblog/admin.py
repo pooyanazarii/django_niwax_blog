@@ -1,11 +1,13 @@
 from django.contrib import admin
 from iblog.models import Post
 from iblog.models import Tags
+from iblog.models import Contact
 
 
 # Register your models here.
 
 #this class for customize show data in admin
+
 admin.site.register(Tags)
 @admin.register(Post)
 class PostAdmin_customize (admin.ModelAdmin):
@@ -18,3 +20,5 @@ class PostAdmin_customize (admin.ModelAdmin):
     search_fields = ['title','text_content','author']
     
 # admin.site.register(Post,PostAdmin_customize)
+
+admin.site.register(Contact)

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Test</title>
+</head>
+
+<body>
+
+    <form action="{% url 'blog:test2' %}" method="post" dir="ltr">
+        {% csrf_token %}
+        <!-- <label>name:</label>
+        <input name="name" type="text">
+        <br> -->
+        <!-- 
+        <label>email:</label>
+        <input name="email" type="text">
+        <br>
+        <label>subject:</label>
+        <input name="subject" type="text">
+        <br>
+        <label>message:</label>
+        <input name="message" type="text">
+        <br> -->
+        {{form.as_p}}
+        <br>
+        <button type="submit">Send</button>
+
+    </form>
+
+</body>
+
+</html>
