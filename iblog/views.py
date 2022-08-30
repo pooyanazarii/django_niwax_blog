@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404
-from iblog.models import Post,Contact
+from iblog.models import Post
+# from iblog.models import Post
 from datetime import datetime
 from django.utils import timezone
 from django.core.paginator import Paginator , PageNotAnInteger, EmptyPage
 from datetime import datetime
-from iblog.forms import NameFrom
-from iblog.forms import ContactForm
+# from iblog.forms import NameFrom
+# from iblog.forms import ContactForm
 from django.http import HttpResponse
 from django.contrib import messages
 from django.utils import timezone
@@ -103,33 +104,33 @@ def search_view(request):
     return render(request, "blog_pages/blog-home.html", context_search)
 
 
-def test2_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        # name =(request.POST.get("name"))
-        # email =(request.POST.get("email"))
-        # subject =(request.POST.get("subject"))
-        # message =(request.POST.get("message"))
-        # print(name,email,subject,message)
-        # contact = Contact()
-        # contact.name = name
-        # contact.email = email
-        # contact.subject = subject
-        # contact.message = message
-        # contact.created_date =datetime.now()
-        # contact.updated_date = datetime.now()
-        # contact.save()
-        if form.is_valid():
-            # name = form.cleaned_data['name']
-            # subject = form.cleaned_data['subject']
-            # email = form.cleaned_data['email']
-            # message = form.cleaned_data['message']
-            # print(name,email,subject,message)
-            form.save()
-            messages.add_message(request,messages.SUCCESS,'Your ticekt ok')
-            return HttpResponse("done")
-        else:
-            messages.add_message(request,messages.ERROR,'noooooooooo')
-            return HttpResponse("no valied")
-    form = ContactForm()
-    return render(request,"test2.html",{'form':form})
+# def test2_view(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         # name =(request.POST.get("name"))
+#         # email =(request.POST.get("email"))
+#         # subject =(request.POST.get("subject"))
+#         # message =(request.POST.get("message"))
+#         # print(name,email,subject,message)
+#         # contact = Contact()
+#         # contact.name = name
+#         # contact.email = email
+#         # contact.subject = subject
+#         # contact.message = message
+#         # contact.created_date =datetime.now()
+#         # contact.updated_date = datetime.now()
+#         # contact.save()
+#         if form.is_valid():
+#             # name = form.cleaned_data['name']
+#             # subject = form.cleaned_data['subject']
+#             # email = form.cleaned_data['email']
+#             # message = form.cleaned_data['message']
+#             # print(name,email,subject,message)
+#             form.save()
+#             messages.add_message(request,messages.SUCCESS,'Your ticekt ok')
+#             return HttpResponse("done")
+#         else:
+#             messages.add_message(request,messages.ERROR,'noooooooooo')
+#             return HttpResponse("no valied")
+#     form = ContactForm()
+#     return render(request,"test2.html",{'form':form})
