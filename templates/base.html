@@ -38,7 +38,7 @@
                         <img src="{% static 'images/logo.png' %}" alt="Logo" class="mega-darks-logo" />
                     </a>
                 </div>
-                
+
                 <div class="custom-nav" role="navigation">
                     <ul class="nav-list">
                         <li class="sbmenu rpdropdown">
@@ -57,6 +57,7 @@
                                                 <!-- menu item -->
                                                 <li><a href="{% url 'blog:blog-home' %}">خانه</a> </li>
                                                 <li><a href="{% url 'blog:about' %}"> درباره ما </a> </li>
+                                                <li><a href="{% url 'website:contact' %}"> تماس با ما</a> </li>
 
                                             </ul>
                                         </div>
@@ -85,9 +86,9 @@
                         <li>
                             <a href="#" class="menu-links right-bddr">&nbsp;</a>
                             <!--menu right border-->
-
+                        
                         <li class="contact-show">
-                            <a href="#" class="btn-round- trngl btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="btn-round- btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>
                             <div class="contact-inquiry">
                                 <div class="contact-info-">
 
@@ -118,14 +119,13 @@
                             </div>
                         </li>
 
-                        <li><a href="{% url 'blog:about' %}" class="btn-br bg-btn3 btshad-b2 lnk">تماس مستقیم <span
                                     class="circle"></span></a> </li>
                     </ul>
                 </div>
                 <div class="mobile-menu2">
                     <ul class="mob-nav2">
-                        <li><a href="#" class="btn-round- trngl btn-br bg-btn btshad-b1" data-bs-toggle="modal"
-                                data-bs-target="#menu-popup"><i class="fas fa-envelope-open-text"></i></a></li>
+                        <li><a href="#" class="btn-round- btn-br bg-btn btshad-b1" data-bs-toggle="modal" data-bs-target="#menu-popup">
+                                <i class="fas fa-envelope-open-text"></i></a></li>
                         <li class="navm-"> <a class="toggle" href="#"><span></span></a></li>
                     </ul>
                 </div>
@@ -239,17 +239,17 @@
             </div>
 
         </div>
-        
+
     </div>
     <!--Mobile contact-->
     <!--End Header -->
 
-    
+
     {% block content %}
 
     {% endblock %}
     <!--Start Footer-->
-    
+
     <footer>
         <div class="footer-row1">
             <div class="container">
@@ -320,7 +320,7 @@
 
 
 
-                    
+
                     <!-- end footer latest post-->
                 </div>
             </div>
