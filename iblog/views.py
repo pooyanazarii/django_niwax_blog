@@ -3,11 +3,12 @@ from iblog.models import Post,Contact
 from datetime import datetime
 from django.utils import timezone
 from django.core.paginator import Paginator , PageNotAnInteger, EmptyPage
-from datetime import datetime, timezone
+from datetime import datetime
 from iblog.forms import NameFrom
 from iblog.forms import ContactForm
 from django.http import HttpResponse
 from django.contrib import messages
+from django.utils import timezone
 
 
 # Create your views here.
@@ -17,7 +18,7 @@ def blog_home_view(request, **kwargs):
     print(kwargs)
     print("-----------------------------------------------")
     # posts = Post.objects.all()
-    posts = Post.objects.filter(published_date__lte=timezone.now(), status=1)
+    posts = Post.objects.filter(published_date__lte= timezone.now(), status=1)
     if kwargs.get("getname"):
         posts = posts.filter(tags__nametag=kwargs["getname"])
     if kwargs.get("author_username"):
