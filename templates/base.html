@@ -24,9 +24,52 @@
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'css/darkmode.css' %}" rel="stylesheet">
     <link href="{% static 'css/rtl.css' %}" rel="stylesheet">
+    <style>
+        .error2 {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .success2 {
+            padding: 20px;
+            background-color: #04AA6D;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            background-color: #2196F3;
+        }
+
+        .warning {
+            background-color: #ff9800;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
+
     <!--Start Header -->
     <header class="nav-bg-w main-header navfix fixed-top menu-white">
 
@@ -86,7 +129,7 @@
                         <li>
                             <a href="#" class="menu-links right-bddr">&nbsp;</a>
                             <!--menu right border-->
-                        
+
                         <li class="contact-show">
                             <a href="#" class="btn-round- btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>
                             <div class="contact-inquiry">
@@ -114,7 +157,9 @@
                                             <li><i class="fas fa-envelope"></i><a
                                                     href="mailto:info@businessname.com">info@businessname.com</a></li>
                                         </ul>
+
                                     </div>
+
                                 </div>
                             </div>
                         </li>
@@ -125,7 +170,8 @@
                 </div>
                 <div class="mobile-menu2">
                     <ul class="mob-nav2">
-                        <li><a href="#" class="btn-round- btn-br bg-btn btshad-b1" data-bs-toggle="modal" data-bs-target="#menu-popup">
+                        <li><a href="#" class="btn-round- btn-br bg-btn btshad-b1" data-bs-toggle="modal"
+                                data-bs-target="#menu-popup">
                                 <i class="fas fa-envelope-open-text"></i></a></li>
                         <li class="navm-"> <a class="toggle" href="#"><span></span></a></li>
                     </ul>
@@ -244,7 +290,7 @@
     </div>
     <!--Mobile contact-->
     <!--End Header -->
-
+    <!-- Show message from request -->
 
     {% block content %}
 
@@ -252,6 +298,7 @@
     <!--Start Footer-->
 
     <footer>
+
         <div class="footer-row1">
             <div class="container">
                 <div class="row">
@@ -372,7 +419,11 @@
         </div>
     </footer>
     <!--End Footer-->
-
+	{% if messages %}
+	{% for message in messages %}
+      <script> alert('{{message}}')</script>
+	{% endfor %}
+	{% endif %}
 
 
 
@@ -383,6 +434,19 @@
     <script src="{% static 'js/plugin.min.js' %}"></script>
     <!--common script file-->
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function () { div.style.display = "none"; }, 600);
+            }
+        }
+    </script>
 </body>
 
 </html>
