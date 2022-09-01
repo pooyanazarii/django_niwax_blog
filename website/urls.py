@@ -4,5 +4,5 @@ from website.views import *
 
 app_name = "website"
 urlpatterns = [
-    path('contact',contactus_view,name='contact'),
+    path('contact/',contactus_view,name='contact'),
 ]
