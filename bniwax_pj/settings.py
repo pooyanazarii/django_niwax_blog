@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # for Modules
     'django.contrib.humanize',
+    #site framework
+    'django.contrib.sites',
+    #use for site map
+    'django.contrib.sitemaps',
     #this is added with me
     'iblog.apps.IblogConfig',
     'website.apps.WebsiteConfig',
@@ -118,6 +122,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+SITE_ID = 2
 
 
 # Static files (CSS, JavaScript, Images)
