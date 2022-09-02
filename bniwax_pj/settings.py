@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #robot
-    'robots',
     # for Modules
     'django.contrib.humanize',
     #site framework
@@ -126,8 +124,6 @@ USE_L10N = True
 USE_TZ = True
 
 SITE_ID = 2
-ROBOTS_USE_HOST = True
-ROBOTS_USE_SITEMAP = True
 
 
 # Static files (CSS, JavaScript, Images)
