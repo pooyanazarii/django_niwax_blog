@@ -4,6 +4,7 @@ from django.db import models
 from django.utils.html import format_html
 from django.contrib import admin
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 class Tags(models.Model):
@@ -28,3 +29,6 @@ class Post(models.Model):
                 
     def __str__(self):
         return self.title
+    
+    # def get_absolute_url(self):
+    #     return reverse('blog:blog_single', kwargs={'pid':self.id})
