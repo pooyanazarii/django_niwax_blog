@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load blog_tag %}
+{% load humanize %}
 {% block content %}
 <!--Breadcrumb Area-->
 <section class="breadcrumb-area banner-2">
@@ -57,6 +58,7 @@
                   <!-- <p>{{posts.published_date.date}}</p> -->
                 </a>
                   <p>{{posts.published_date.date|date:"d M Y"}}</p>
+                  {{posts.published_date|naturaltime}}
                 </div>
               </div>
             </div>

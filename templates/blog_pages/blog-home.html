@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load recent_element %}
+{% load humanize %}
 {% block content %}
 <!--Breadcrumb Area-->
 <section class="breadcrumb-area banner-2">
@@ -13,7 +14,7 @@
 							<div class="bread-title text-radius text-light text-animation bg-b">
 
 								<h2> نیواکس | NIWAX</h2>
- 
+
 							</div>
 							<br>
 							<ul>
@@ -65,7 +66,10 @@
 										class="fas fa-tag"></i> {{post.category}} </a></span>
 							<span class="posted-on-">
 								<a href="{% url 'blog:blog_single' pid=post.id %}"><i class="fas fa-clock"></i>
-									{{post.published_date|date:"Y/m/d"}}</a>
+									{{post.published_date|date:"Y/m/d"}}
+									
+								</a>
+
 								</a>
 
 							</span>

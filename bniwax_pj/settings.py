@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # for Modules
+    'django.contrib.humanize',
     #this is added with me
     'iblog.apps.IblogConfig',
     'website.apps.WebsiteConfig',
