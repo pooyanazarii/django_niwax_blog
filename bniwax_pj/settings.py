@@ -54,6 +54,9 @@ INSTALLED_APPS = [
 
     #for summernote
     'django_summernote',
+
+    #for catptcha
+    'captcha',
 ]
 
 MIDDLEWARE = [
