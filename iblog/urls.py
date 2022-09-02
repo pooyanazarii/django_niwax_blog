@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from iblog.views import *
+from iblog.feeds import LatestEntriesFeed
+
 app_name = "blog"
 urlpatterns = [
     path('',blog_home_view,name='blog-home'),
@@ -12,5 +14,6 @@ urlpatterns = [
     path('category=<str:getname>',blog_home_view,name="category"),
     path('author=<str:author_username>',blog_home_view,name="author"),
     path('search/',search_view,name='search'),
+    path('rss/feed/', LatestEntriesFeed()),
     # path('test2/',test2_view,name="test2"),
 ]
