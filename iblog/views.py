@@ -1,3 +1,4 @@
+from turtle import isvisible
 from django.shortcuts import render, get_object_or_404
 from iblog.models import Post, Comment
 # from iblog.models import Post
@@ -10,6 +11,9 @@ from datetime import datetime
 from django.http import HttpResponse
 from django.contrib import messages
 from django.utils import timezone
+from iblog.forms import CommentForm
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -48,32 +52,32 @@ def about_view(request):
 
 
 def blog_single_view(request, pid):
-    print("----------------------------------------")
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'دیدگاه شما با موفقیت ثبت شد')
+        else:
+            #message
+            messages.add_message(request, messages.ERROR, 'عملیات با شکست مواجه شد.')
 
+    else:
+        pass
     posts = Post.objects.filter(status=1)
-    
-
     posts = get_object_or_404(Post, pk=pid)
 
     temp_viewed = posts.counted_view
     posts.counted_view = temp_viewed + 1
     posts.save()
-
     # ------------------------------------ for next and previous
-    this_post = Post.objects.get(id=pid)
-    previous_post = Post.objects.filter(
-        id__lt=pid, status=1).order_by('id').last()
-    next_post = Post.objects.filter(
-        id__gt=pid, status=1).order_by('id').first()
-    if previous_post == None:
-        previous_post = {"id": 0}
-    if next_post == None:
-        next_post = {"id": 0}
+    previous_post = Post.objects.filter(id__lt=pid, status=1).order_by('id').last()
+    next_post = Post.objects.filter(id__gt=pid, status=1).order_by('id').first()
+    if previous_post == None: previous_post = {"id": 0}
+    if next_post == None: next_post = {"id": 0}
 
+    form = CommentForm()
     comment = Comment.objects.filter(post=posts.id,approved=True).order_by('-created_date')
-
-    context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment}
-
+    context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment , 'form':form}
     return render(request, 'blog_pages/blog-single.html', context_singel_post)
 
 

@@ -213,25 +213,31 @@
               <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
             </div>
           </div> -->
-            <div class="form-block form-blog mt60">
-              <form action="#" method="post" name="#">
+            <div name="#comment" class="form-block form-blog mt60">
+              <form action="{% url 'blog:blog_single' pid=posts.id %}" method="post" name="#">
+                {% csrf_token %}
+                <input type="hidden" name="post" value="{{posts.id}}"/>
                 <div class="fieldsets row">
-                  <div class="col-md-6"><input type="text" placeholder="نام" name="#" /></div>
-                  <div class="col-md-6"><input type="email" placeholder="ایمیل" name="#" /></div>
+                  <div class="col-md-6"><input type="text" placeholder="نام" name="name" /></div>
+                  <div class="col-md-6"><input type="email" placeholder="ایمیل" name="email" /></div>
                 </div>
                 <div class="fieldsets row">
-                  <div class="col-md-12"><input type="text" placeholder="وبسایت" name="#" /></div>
+                  <div class="col-md-12"><input type="text" placeholder="موضوع" name="subject" /></div>
                 </div>
-                <div class="fieldsets"><textarea placeholder="نظر شما" name="#"></textarea></div>
+                <div class="fieldsets"><textarea placeholder="نظر شما" name="message"></textarea></div>
+                
+
                 <div class="fieldsets mt10">
                   <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i
                       class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
                 </div>
               </form>
             </div>
+
         </div>
+              <!-- end comment section -->
       </div>
-      <!-- end comment section -->
+
 
       <!--End Blog Details-->
       <!--Start Sidebar-->
