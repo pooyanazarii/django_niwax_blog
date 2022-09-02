@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from iblog.models import Post
+from iblog.models import Post, Comment
 # from iblog.models import Post
 from datetime import datetime
 from django.utils import timezone
@@ -49,7 +49,9 @@ def about_view(request):
 
 def blog_single_view(request, pid):
     print("----------------------------------------")
+
     posts = Post.objects.filter(status=1)
+    
 
     posts = get_object_or_404(Post, pk=pid)
 
@@ -68,7 +70,9 @@ def blog_single_view(request, pid):
     if next_post == None:
         next_post = {"id": 0}
 
-    context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post}
+    comment = Comment.objects.filter(post=posts.id,approved=True).order_by('-created_date')
+
+    context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment}
 
     return render(request, 'blog_pages/blog-single.html', context_singel_post)
 

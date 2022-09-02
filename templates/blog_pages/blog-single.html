@@ -144,9 +144,17 @@
 
         <!-- start comment section -->
         <div class="comments-block mt60">
-          <h2 class="mb60">نظرات:</h2>
-          <!-- disqus -->
-          <div id="disqus_thread"></div>
+          {% if comments %}
+          <h2 class="mb60">دیدگاه‌ها:</h2>
+
+          <small>{{comments|length}}
+            دیدگاه ثبت شده</samll>
+            {% else %}
+            <h2 class="mb60">دیدگاهی ثبت نشده</h2>
+
+            {% endif %}
+            <!-- disqus -->
+            <!-- <div id="disqus_thread"></div>
           <script>
             /**
             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -165,9 +173,34 @@
             })();
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-              Disqus.</a></noscript>
-              <!-- end disqus -->
-          <!-- <div class="media">
+              Disqus.</a></noscript> -->
+            <!-- end disqus -->
+            {% for comment in comments %}
+            <hr>
+            <div class="media">
+
+              <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
+                  class="img-fluid" /></div>
+              <div class="media-body user-info">
+                <h5 class="mb10">
+                  <small dir="ltr">{{comment.name}}</small>
+                  <small dir="rtl">گفته:</small>
+                  {{comment.subject}}
+
+                </h5>
+                <span dir="ltr">
+                  <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                  {{comment.created_date|naturaltime}}
+                </span>
+                <br>
+                <br>
+                <p>
+                  {{comment.message}}
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="media replied">
             <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
                 class="img-fluid" /></div>
             <div class="media-body user-info">
@@ -179,49 +212,23 @@
               </h5>
               <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
             </div>
-          </div>
-          <div class="media replied">
-            <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
-                class="img-fluid" /></div>
-            <div class="media-body user-info">
-              <h5 class="mb10">
-                جان دی <small>گفته:</small>
-                <span>
-                  2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                </span>
-              </h5>
-              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="user-image bdr-radius"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
-                class="img-fluid" /></div>
-            <div class="media-body user-info">
-              <h5 class="mb10">
-                جان دی <small>گفته:</small>
-                <span>
-                  2 دی 1400 <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                </span>
-              </h5>
-              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-            </div>
-          </div>
-          <div class="form-block form-blog mt60">
-            <form action="#" method="post" name="#">
-              <div class="fieldsets row">
-                <div class="col-md-6"><input type="text" placeholder="نام" name="#" /></div>
-                <div class="col-md-6"><input type="email" placeholder="ایمیل" name="#" /></div>
-              </div>
-              <div class="fieldsets row">
-                <div class="col-md-12"><input type="text" placeholder="وبسایت" name="#" /></div>
-              </div>
-              <div class="fieldsets"><textarea placeholder="نظر شما" name="#"></textarea></div>
-              <div class="fieldsets mt10">
-                <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i
-                    class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
-              </div>
-            </form>
           </div> -->
+            <div class="form-block form-blog mt60">
+              <form action="#" method="post" name="#">
+                <div class="fieldsets row">
+                  <div class="col-md-6"><input type="text" placeholder="نام" name="#" /></div>
+                  <div class="col-md-6"><input type="email" placeholder="ایمیل" name="#" /></div>
+                </div>
+                <div class="fieldsets row">
+                  <div class="col-md-12"><input type="text" placeholder="وبسایت" name="#" /></div>
+                </div>
+                <div class="fieldsets"><textarea placeholder="نظر شما" name="#"></textarea></div>
+                <div class="fieldsets mt10">
+                  <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i
+                      class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
+                </div>
+              </form>
+            </div>
         </div>
       </div>
       <!-- end comment section -->
