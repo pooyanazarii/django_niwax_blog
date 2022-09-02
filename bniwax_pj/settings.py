@@ -43,9 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     #use for site map
     'django.contrib.sitemaps',
+    #robot
+    'robots',
+
     #this is added with me
     'iblog.apps.IblogConfig',
     'website.apps.WebsiteConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -124,7 +128,8 @@ USE_L10N = True
 USE_TZ = True
 
 SITE_ID = 2
-
+ROBOTS_USE_HOST = True
+ROBOTS_USE_SITEMAP = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
