@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     #this is added with me
     'iblog.apps.IblogConfig',
     'website.apps.WebsiteConfig',
-
+    #for debug toolbar
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #this is whitenose
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    # for debug toolbar
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'bniwax_pj.urls'
@@ -146,3 +149,7 @@ STATICFILES_DIRS  = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
