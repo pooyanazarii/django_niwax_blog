@@ -84,11 +84,22 @@
 
                 <div class="custom-nav" role="navigation">
                     <ul class="nav-list">
+
+                        {% if request.user.is_authenticated %}
+                        <a  class="menu-links"> وارد شده با {{request.user.username}} </a>
                         <li class="sbmenu rpdropdown">
-                            <a href="admin/" class="menu-links"> ورود ادمین </a>
-                            <div class="nx-dropdown menu-dorpdown">
-                            </div>
+                            <a href="#" class="menu-links"> حساب کاربری </a>
                         </li>
+                            {% else %}
+                        <li class="sbmenu rpdropdown">
+                            <a href="{% url 'accounts:login' %}" class="menu-links"> ورود ادمین </a>
+                        </li>
+                        <li class="sbmenu rpdropdown">
+                            <a href="{% url 'accounts:signup' %}" class="menu-links"> ثبت نام </a>
+                        </li>
+                        {% endif %}
+                        <div class="nx-dropdown menu-dorpdown">
+                        </div>
 
                         <li class="sbmenu rpdropdown">
                             <a href="#" class="menu-links"> خانه </a>
@@ -419,11 +430,11 @@
         </div>
     </footer>
     <!--End Footer-->
-	{% if messages %}
-	{% for message in messages %}
-      <script> alert('{{message}}')</script>
-	{% endfor %}
-	{% endif %}
+    {% if messages %}
+    {% for message in messages %}
+    <script> alert('{{message}}')</script>
+    {% endfor %}
+    {% endif %}
 
 
 
@@ -435,7 +446,7 @@
     <!--common script file-->
     <script src="{% static 'js/main.js' %}"></script>
     <script>
-        
+
         var close = document.getElementsByClassName("closebtn");
         var i;
 
