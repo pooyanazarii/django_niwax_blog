@@ -144,15 +144,15 @@
 
         <!-- start comment section -->
         <div class="comments-block mt60">
-          {% if comments %}
+           {% if comments %}
           <h2 class="mb60">دیدگاه‌ها:</h2>
 
-          <small>{{comments|length}}
-            دیدگاه ثبت شده</samll>
+          <p>{{comments|length}}
+            دیدگاه ثبت شده</p>
             {% else %}
             <h2 class="mb60">دیدگاهی ثبت نشده</h2>
 
-            {% endif %}
+            {% endif %} 
             {% for comment in comments %}
             <hr>
             <div class="media">
