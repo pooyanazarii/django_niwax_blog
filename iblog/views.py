@@ -14,6 +14,7 @@ from django.utils import timezone
 from iblog.forms import CommentForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -50,7 +51,7 @@ def blog_home_view(request, **kwargs):
 def about_view(request):
     return render(request, 'blog_pages/about.html')
 
-
+@login_required
 def blog_single_view(request, pid):
     if request.method == "POST":
         form = CommentForm(request.POST)
