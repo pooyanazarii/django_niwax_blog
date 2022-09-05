@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     #this is added with me
     'iblog.apps.IblogConfig',
     'website.apps.WebsiteConfig',
+    'account.apps.AccountConfig',
     #for debug toolbar
     "debug_toolbar",
 
