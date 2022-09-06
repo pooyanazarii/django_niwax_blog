@@ -144,41 +144,41 @@
 
         <!-- start comment section -->
         <div class="comments-block mt60">
-           {% if comments %}
+          {% if comments %}
           <h2 class="mb60">دیدگاه‌ها:</h2>
 
           <p>{{comments|length}}
             دیدگاه ثبت شده</p>
-            {% else %}
-            <h2 class="mb60">دیدگاهی ثبت نشده</h2>
+          {% else %}
+          <h2 class="mb60">دیدگاهی ثبت نشده</h2>
 
-            {% endif %} 
-            {% for comment in comments %}
-            <hr>
-            <div class="media">
+          {% endif %}
+          {% for comment in comments %}
+          <hr>
+          <div class="media">
 
-              <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
-                  class="img-fluid" /></div>
-              <div class="media-body user-info">
-                <h5 class="mb10">
-                  <small dir="ltr">{{comment.name}}</small>
-                  <small dir="rtl">گفته:</small>
-                  {{comment.subject}}
+            <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
+                class="img-fluid" /></div>
+            <div class="media-body user-info">
+              <h5 class="mb10">
+                <small dir="ltr">{{comment.name}}</small>
+                <small dir="rtl">گفته:</small>
+                {{comment.subject}}
 
-                </h5>
-                <span dir="ltr">
-                  <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
-                  {{comment.created_date|naturaltime}}
-                </span>
-                <br>
-                <br>
-                <p>
-                  {{comment.message}}
-                </p>
-              </div>
+              </h5>
+              <span dir="ltr">
+                <a class="reply-btn" href="#"><i class="fas fa-reply"></i></a>
+                {{comment.created_date|naturaltime}}
+              </span>
+              <br>
+              <br>
+              <p>
+                {{comment.message}}
+              </p>
             </div>
-            {% endfor %}
-            <!-- <div class="media replied">
+          </div>
+          {% endfor %}
+          <!-- <div class="media replied">
             <div class="user-image"><img src="{% static 'images/user-thumb/user3.jpg' %}" alt="girl"
                 class="img-fluid" /></div>
             <div class="media-body user-info">
@@ -191,29 +191,43 @@
               <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
             </div>
           </div> -->
-            <div name="#comment" class="form-block form-blog mt60">
-              <form action="{% url 'blog:blog_single' pid=posts.id %}" method="post" name="#">
-                {% csrf_token %}
-                <input type="hidden" name="post" value="{{posts.id}}"/>
-                <div class="fieldsets row">
-                  <div class="col-md-6"><input type="text" placeholder="نام" name="name" /></div>
-                  <div class="col-md-6"><input type="email" placeholder="ایمیل" name="email" /></div>
+          <div name="#comment" class="form-block form-blog mt60">
+            <form action="{% url 'blog:blog_single' pid=posts.id %}" method="post" name="#">
+              {% csrf_token %}
+              <input type="hidden" name="post" value="{{posts.id}}" />
+              {% if request.user.is_authenticated %}
+              <div class="fieldsets row">
+                <div class="col-md-12"><label> شما قبلا با نام کاربری {{request.user.username}} وارد شده اید.</label>
                 </div>
-                <div class="fieldsets row">
-                  <div class="col-md-12"><input type="text" placeholder="موضوع" name="subject" /></div>
-                </div>
-                <div class="fieldsets"><textarea placeholder="نظر شما" name="message"></textarea></div>
-                
+                {% if request.user.get_full_name %} <input type="hidden" placeholder="نام" name="name"
+                  value="{{request.user.first_name}}" /> {% else %}
+                <input type="hidden" placeholder="نام" name="name" value="{{request.user.username}}" />
+                {% endif %}
+                <input type="hidden" placeholder="ایمیل" name="email" value="{{request.user.email}}" />
+              </div>
+              {% else %}
 
-                <div class="fieldsets mt10">
-                  <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i
-                      class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
-                </div>
-              </form>
-            </div>
+
+              <div class="fieldsets row">
+                <div class="col-md-6"><input type="text" placeholder="نام" name="name" /></div>
+                <div class="col-md-6"><input type="email" placeholder="ایمیل" name="email" /></div>
+              </div>
+              {% endif %}
+              <div class="fieldsets row">
+                <div class="col-md-12"><input type="text" placeholder="موضوع" name="subject" /></div>
+              </div>
+              <div class="fieldsets"><textarea placeholder="نظر شما" name="message"></textarea></div>
+
+
+              <div class="fieldsets mt10">
+                <button type="submit" name="#" class="btn-main bg-btn lnk">ارسال <i
+                    class="fas fa-chevron-left fa-icon"></i><span class="circle"></span></button>
+              </div>
+            </form>
+          </div>
 
         </div>
-              <!-- end comment section -->
+        <!-- end comment section -->
       </div>
 
 
