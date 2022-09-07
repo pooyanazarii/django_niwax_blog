@@ -91,14 +91,14 @@
                             <a href="#" class="menu-links"> حساب کاربری </a>
                         </li>
                         <li class="sbmenu rpdropdown">
-                            <a href="{% url 'logout' %}" class="menu-links"> خروج از حساب </a>
+                            <a href="{% url 'accounts:logout' %}" class="menu-links"> خروج از حساب </a>
                         </li>
                             {% else %}
                         <li class="sbmenu rpdropdown">
-                            <a href="{% url 'login' %}" class="menu-links"> ورود ادمین </a>
+                            <a href="{% url 'accounts:login' %}" class="menu-links"> ورود ادمین </a>
                         </li>
                         <li class="sbmenu rpdropdown">
-                            <a href="#" class="menu-links"> ثبت نام </a>
+                            <a href="{% url 'signup' %}" class="menu-links"> ثبت نام </a>
                         </li>
                         {% endif %}
                         <div class="nx-dropdown menu-dorpdown">

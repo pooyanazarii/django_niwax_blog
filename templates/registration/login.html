@@ -22,7 +22,7 @@
     <form class="form-signin" method="post" action="{% url 'login' %}">
         
         <img class="mb-4" src="{% static 'images/img_pagelogin/bootstrap-solid.svg' %}" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Please Login (from registration)</h1>
         {% csrf_token %}
         <!-- {{form}} -->
         <label class="sr-only">Username</label>

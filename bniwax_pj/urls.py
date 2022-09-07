@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap
 from iblog.sitemaps import BlogSitemap
-from account.views import login_view,logout_view
+from account.views import login_view,logout_view,signup_view
 
 import debug_toolbar
 sitemaps = {
@@ -43,11 +43,11 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
     
-    # path('accounts/',include('account.urls')),
+    path('accounts/',include('account.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/login/', login_view, name='login'),
     path('accounts/logout/', logout_view, name='logout'),
-    path('accounts/logout/', logout_view, name='logout'),
+    path('accounts/signup/', signup_view, name='signup'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
