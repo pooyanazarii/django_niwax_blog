@@ -200,6 +200,7 @@ STATICFILES_DIRS  = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# CSRF_COOKIE_SECURE = True
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
