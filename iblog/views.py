@@ -1,3 +1,4 @@
+
 from turtle import isvisible
 from django.shortcuts import render, get_object_or_404
 from iblog.models import Post, Comment
@@ -15,6 +16,8 @@ from iblog.forms import CommentForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from django.urls import reverse
 
 
 # Create your views here.
@@ -76,10 +79,16 @@ def blog_single_view(request, pid):
     if previous_post == None: previous_post = {"id": 0}
     if next_post == None: next_post = {"id": 0}
 
-    form = CommentForm()
-    comment = Comment.objects.filter(post=posts.id,approved=True).order_by('-created_date')
-    context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment , 'form':form}
-    return render(request, 'blog_pages/blog-single.html', context_singel_post)
+    print("-------------------------------------------------",posts.login_require)
+    if not posts.login_require:
+
+        form = CommentForm()
+        comment = Comment.objects.filter(post=posts.id,approved=True).order_by('-created_date')
+        context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment , 'form':form}
+        return render(request, 'blog_pages/blog-single.html', context_singel_post)
+    else:
+        print("ACCOUNT OUT-----------------------")
+        return HttpResponseRedirect(reverse("accounts:login"))
 
 
 def error_view(request):

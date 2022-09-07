@@ -23,6 +23,7 @@ class Post(models.Model):
     category = models.CharField(max_length=255)
     counted_view = models.IntegerField()
     status = models.BooleanField()
+    login_require = models.BooleanField(default=False)
     published_date = models.DateTimeField()
     created_date = models.DateTimeField()
     updated_date = models.DateTimeField()
