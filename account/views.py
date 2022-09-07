@@ -1,10 +1,11 @@
 from django.contrib.auth import authenticate ,login,logout 
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm,PasswordResetForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse
+from account.forms import UserCreationForm
 
 # Create your views here.
 

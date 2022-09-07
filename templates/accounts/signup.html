@@ -25,6 +25,10 @@
         <h1 class="h3 mb-3 font-weight-normal">Please sign in (from Accounts)</h1>
         {% csrf_token %}
         <!-- {{form}} -->
+
+        <label class="sr-only">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Email" required >
+
         <label class="sr-only">Username</label>
         <input type="text" name="username" class="form-control" placeholder="Username" required >
         
@@ -32,7 +36,7 @@
         <input type="password" name="password1" class="form-control" placeholder="Password" required>
         <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
 
-        <!-- {{forms}} -->
+        <!-- {{forms.as_p}} -->
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
