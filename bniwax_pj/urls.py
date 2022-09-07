@@ -42,8 +42,11 @@ urlpatterns = [
     path('__debug__/', include('debug_toolbar.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
-    path('accounts/',include('account.urls')),
+    
+    # path('accounts/',include('account.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/login/', login_view, name='login'),
+    path('accounts/logout/', logout_view, name='logout'),
     path('accounts/logout/', logout_view, name='logout'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

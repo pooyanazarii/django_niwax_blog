@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     #this is added with me
     'iblog.apps.IblogConfig',
     'website.apps.WebsiteConfig',
-    'account.apps.AccountConfig',
+    # 'account.apps.AccountConfig',
     #for debug toolbar
     "debug_toolbar",
 
@@ -199,7 +199,7 @@ STATICFILES_DIRS  = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+LOGIN_REDIRECT_URL = '/'
 # CSRF_COOKIE_SECURE = True
 INTERNAL_IPS = [
     "127.0.0.1",
