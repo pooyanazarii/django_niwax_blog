@@ -10,6 +10,9 @@ from account.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 
 # Create your views here.
@@ -18,11 +21,15 @@ def my_login(req,input,password):
     print("=======","=======","=======","=======",user)
     if user is not None:
         login(req,user)
-        return redirect('/')
+        return redirect(reverse("blog:blog-home"))
     else:
-        return messages.add_message(req, messages.SUCCESS,  ' نام کاربری/ایمیل یا رمز عبود اشتباه وارد شده ')
+        messages.add_message(req, messages.SUCCESS, ' نام کاربری/ایمیل یا رمز عبود اشتباه وارد شده ')
+        return redirect(reverse("accounts:login"))
+
+        
 
 def login_view(request):
+    # email(request)
     if request.POST:
         form = AuthenticationForm(request=request , data = request.POST)
         
@@ -108,3 +115,12 @@ def signup_view(request):
     
 #     context = {'form':form_rest}
 #     return render (request,'accounts/pass_reset_form.html',context)
+
+# def email(request):
+#     subject = 'ایمیل بازیابی'
+#     message = ' رمز بازیابیش ما '
+#     email_from = settings.EMAIL_HOST_USER
+#     recipient_list = ['pya.nzri@gmail.com',]
+#     send_mail( subject, message, email_from, recipient_list )
+#     return redirect('/')
+
