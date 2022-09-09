@@ -79,16 +79,24 @@ def blog_single_view(request, pid):
     if previous_post == None: previous_post = {"id": 0}
     if next_post == None: next_post = {"id": 0}
 
-    print("-------------------------------------------------",posts.login_require)
-    if not posts.login_require:
-
+    print("-show login req post----------------------------------------------", not posts.login_require)
+    print("-authen----------------------------------------------",request.user.is_authenticated)
+    if posts.login_require:
+        if request.user.is_authenticated:
+            form = CommentForm()
+            comment = Comment.objects.filter(post=posts.id,approved=True).order_by('-created_date')
+            context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment , 'form':form}
+            return render(request, 'blog_pages/blog-single.html', context_singel_post)
+        else:
+            print("ACCOUNT OUT-----------------------")
+            return HttpResponseRedirect(reverse("accounts:login"))  
+    else:
         form = CommentForm()
         comment = Comment.objects.filter(post=posts.id,approved=True).order_by('-created_date')
         context_singel_post = {'posts': posts,'next': next_post, 'prev': previous_post,'comments':comment , 'form':form}
         return render(request, 'blog_pages/blog-single.html', context_singel_post)
-    else:
-        print("ACCOUNT OUT-----------------------")
-        return HttpResponseRedirect(reverse("accounts:login"))
+        
+        
 
 
 def error_view(request):

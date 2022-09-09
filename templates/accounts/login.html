@@ -1,4 +1,3 @@
-
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -20,30 +19,30 @@
 <body class="text-center">
 
     <form class="form-signin" method="post" action="{% url 'accounts:login' %}">
-        
+
         <img class="mb-4" src="{% static 'images/img_pagelogin/bootstrap-solid.svg' %}" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please Login (from Accounts)</h1>
         {% csrf_token %}
         <!-- {{form}} -->
-        <label class="sr-only">Username</label>
-        <input type="text" name="username" class="form-control" placeholder="Username" required >
-        
-        <label  class="sr-only">Password</label>
+        <label class="sr-only">Username Or Email</label>
+        <input type="text" name="username" class="form-control" placeholder="Username Or Email" required>
+
+        <label class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
-            <label>
+            <!-- <label>
                 <input type="checkbox" value="remember-me">
                  Remember me 
-            </label>
+            </label> -->
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2022-2023</p>
-        
+
         <label>
             <a href="{% url 'password_reset' %}">Reset Password</a>
         </label>
     </form>
-    
+
 
     {% if messages %}
     {% for message in messages %}
