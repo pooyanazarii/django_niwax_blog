@@ -1,6 +1,6 @@
 from django import forms
 from iblog.models import Comment
-from django.forms import ModelForm
+
 
 # class NameFrom(forms.Form):
 #     name = forms.CharField(max_length=255)
