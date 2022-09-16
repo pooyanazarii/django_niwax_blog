@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     #for catptcha
     'captcha',
 
+    #for django comporessor
+    'compressor',
+
     
 ]
 
@@ -201,3 +204,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'niwaxsup01@gmail.com'
 EMAIL_HOST_PASSWORD = 'ucvgueyhgfowgpuw'
 # EMAIL_FILE_PATH ='pya.nzri@gmail.com'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+

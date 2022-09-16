@@ -37,6 +37,7 @@ STATICFILES_DIRS  = [
     BASE_DIR / 'static',
 ]
 
-
+COMPRESS_ROOT = BASE_DIR /'static_comp'
+COMPRESS_ENABLED =True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
