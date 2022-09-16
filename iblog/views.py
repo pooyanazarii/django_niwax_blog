@@ -1,5 +1,4 @@
 
-from turtle import isvisible
 from django.shortcuts import render, get_object_or_404
 from iblog.models import Post, Comment
 # from iblog.models import Post

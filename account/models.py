@@ -1,10 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser,UserManager,User
+# from django.contrib.auth.models import AbstractUser,UserManager,User
 from django.utils.translation import gettext_lazy as _
 
-from django.conf import settings
-from django.contrib.auth import get_user_model
-from django.contrib.auth.backends import ModelBackend 
+# from django.conf import settings
+# from django.contrib.auth import get_user_model
+# from django.contrib.auth.backends import ModelBackend 
 
 # class EmailOrUsernameModelBackend(ModelBackend):
     # """
