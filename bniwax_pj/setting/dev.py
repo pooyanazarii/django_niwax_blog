@@ -9,7 +9,7 @@ from bniwax_pj.settings import INSTALLED_APPS
 SECRET_KEY = 'django-insecure-6snfu*%89j#y91jf^@cy^*_1d+7*8l33&dfcr5cd7v5c7%l42m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 

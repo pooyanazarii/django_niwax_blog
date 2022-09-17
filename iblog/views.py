@@ -159,3 +159,10 @@ def search_view(request):
 #             return HttpResponse("no valied")
 #     form = ContactForm()
 #     return render(request,"test2.html",{'form':form})
+
+
+def handler404(request, exception):
+    context = {}
+    response = render(request, "blog_pages/error.html", context=context)
+    response.status_code = 404
+    return response
