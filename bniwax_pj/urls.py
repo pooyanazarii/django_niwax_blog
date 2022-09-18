@@ -25,25 +25,25 @@ from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap
 from iblog.sitemaps import BlogSitemap
 from account.views import login_view,logout_view,signup_view
-
+from .views import *
 import debug_toolbar
+#-------------------------------------
+# # here you can set website 
+updating_flag =1
+#-------------------------------------
 sitemaps = {
     'static': StaticViewSitemap,
     'blog': BlogSitemap
 }
 
 urlpatterns = [
-    path('',include('iblog.urls')),
-    path('website/',include('website.urls')),
-    path('admin/', admin.site.urls),
-        path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', include('robots.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
-    
-    path('accounts/',include('account.urls')),
+    path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/login/', login_view, name='login'),
     path('accounts/logout/', logout_view, name='logout'),
@@ -51,5 +51,24 @@ urlpatterns = [
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns +=[
+    # path('',include('iblog.urls')),
+    path('website/',include('website.urls')),
+    path('accounts/',include('account.urls')),
+]
+
+if updating_flag:
+    urlpatterns +=[
+    path('',upgrating_view1),
+    path('blog',include('iblog.urls'))
+
+    ]
+else:
+    urlpatterns +=[
+    path('',include('iblog.urls')),
+    ]
+    
+
 
 handler404 = 'iblog.views.handler404'

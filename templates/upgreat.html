@@ -1,0 +1,97 @@
+
+{% load static %}
+{% load compress %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>نیواکس- بلاگ تکنولوژی های حوزه کامپیوتر و نرم افزار</title>
+    <meta name="description" content="Creative Agency, Marketing Agency Template">
+    <meta name="keywords" content="Creative Agency, Marketing Agency">
+    <meta name="author" content="rajesh-doot">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--website-favicon-->
+    <link href="{% static 'images/favicon.png' %}" rel="icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    {% compress css %}
+    <!--plugin-css-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/plugin.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
+
+    <!-- template-style -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/darkmode.css' %}" rel="stylesheet">
+    <link href="{% static 'css/rtl.css' %}" rel="stylesheet">
+    <style>
+        .error2 {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .success2 {
+            padding: 20px;
+            background-color: #04AA6D;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            background-color: #2196F3;
+        }
+
+        .warning {
+            background-color: #ff9800;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+
+    {% endcompress %}
+</head>
+<body>
+<!--Start 404 Error-->
+<section class="error bg-gradient pad-tb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mt50 mb50">
+                <div class="layer-div">
+                    <div class="error-block">
+                        <h1>ما در حال بروز رسانی هستیم</h1>
+                        <p>
+                            بزودی باز خواهیم گشت.
+                        </p>
+                        <div class="images mt20">
+                            <img src="{% static 'images/shape/maintenance.png' %}" alt="error page" class="img-fluid" />
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End 404 Error-->
+</body>

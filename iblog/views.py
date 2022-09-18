@@ -166,3 +166,4 @@ def handler404(request, exception):
     response = render(request, "blog_pages/error.html", context=context)
     response.status_code = 404
     return response
+
