@@ -30,7 +30,7 @@ from django.conf.urls import url
 import debug_toolbar
 #-------------------------------------
 # # here you can set website 
-updating_flag =1
+updating_flag =False
 #-------------------------------------
 sitemaps = {
     'static': StaticViewSitemap,
